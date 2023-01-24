@@ -1,34 +1,35 @@
 <template>
-    <div class="tags">
-                    <div class="tags__heading text-center">
+    <div class="tags bg-light">
+                    <div class="tags__heading text-center pt-2">
                         <span>
                             Type de biens
                         </span>
                     </div>
+                    <hr>
 
                     <div class="tags__body text-center">
-
-
                         <div class="tag">
-                            <a href="index.php?action=appartments">
-                                <i class="bi bi-arrow-right"></i> Appartements
-                            </a>
-                            <hr>
+                            <router-link to="/appartments" >
+                                <i class="bi bi-arrow-right"></i>Appartments
+                             </router-link>
                         </div>
 
+                        <hr>
                         <div class="tag">
-                            <a href="">
+                            <router-link to="/houses" >
                                 <i class="bi bi-arrow-right"></i> Maisons
-                            </a>
-                            <hr>
+                             </router-link>
                         </div>
 
+                        <hr>
+
                         <div class="tag">
-                            <a href="">
+                            <router-link to="/lands" >
                                 <i class="bi bi-arrow-right"></i> Terrains
-                            </a>
-                            <hr>
+                             </router-link>
                         </div>
+
+                        <hr>
                     </div>
                 </div>
 </template>

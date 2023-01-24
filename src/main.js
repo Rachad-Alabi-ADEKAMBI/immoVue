@@ -12,7 +12,8 @@ import VueAxios from 'vue-axios'
 
 
 
+
+
 import  '../public/scss/main.css';
 
 createApp(App).use(router).mount('#app')
-Vue.use(VueAxios, axios)

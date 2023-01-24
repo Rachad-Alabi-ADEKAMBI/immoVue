@@ -26,27 +26,37 @@
                     <a class="dropdown-item" href="./index.php?action=lands">Terrains</a>
 
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="./index.php?action=ads">Tout voir</a>
+                    <a class="dropdown-item" href="/">Tout voir</a>
                 </div>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="./index.php?action=contact">Contact</a>
+                <router-link to="/contact" class="nav-link" >
+                     Contact
+                </router-link>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link" href="/dashboardAdmin">Tableau de bord adm</a>
+                <a class="nav-link" href="/dashboardAdmin">Tableau adm</a>
             </li>
 
             <li class="nav-item">
-
+                <router-link to="/dashboard" class="nav-link" >
+                     Tableau user
+                </router-link>
             </li>
+
+
+
             <!--  <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>  -->
         </ul>
         <form class="form-inline my-2 my-lg-0">
+            <button class="btn my-2 my-sm-0" type="submit">
+                <router-link to="/register" >Register    </router-link>
+            </button>
 
             <button class="btn my-2 my-sm-0" type="submit">
                 <router-link to="/login" >Login     </router-link>

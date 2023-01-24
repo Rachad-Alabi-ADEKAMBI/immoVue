@@ -46,7 +46,9 @@
         </div>
 
         <button class="btn btn-primary">
-            Voir
+            <a href="/item">
+                Voir
+            </a>
         </button>
     </div>
 </div>
