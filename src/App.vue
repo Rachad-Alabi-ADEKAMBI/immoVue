@@ -95,18 +95,18 @@
                 <h3>CATEGORIES</h3>
 
                 <p>
-                    <a href="./index.php?action=appartments" class="">
+                    <a href="/appartments" class="">
                         <i class="fas fa-arrow-right"></i> Appartements
                     </a>
                     <br>
-                    <a href="./index.php?action=houses" class="">
+                    <a href="/houses" class="">
                         <i class="fas fa-arrow-right"></i> Maisons
                     </a> <br>
-                    <a href="./index.php?action=lands">
+                    <a href="/lands" class="">
                         <i class="fas fa-arrow-right"></i> Terrains
                     </a> <br>
 
-                    <a href="./index.php?action=ads">
+                    <a href="/ads" class="">
                         <i class="fas fa-arrow-right"></i> Tout voir
                     </a>
 

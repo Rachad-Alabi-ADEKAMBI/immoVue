@@ -29,7 +29,7 @@
                                 </td>
 
                                 <td data-label='Id' scope="row">
-                                    <img src="/assets/img/maison3.jpg" alt="" class="table-img">
+                                    <img src="" alt="" class="table-img">
                                 </td>
                                 <td data-label='Action'>
                                     LOuer

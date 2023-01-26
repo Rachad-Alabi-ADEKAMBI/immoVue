@@ -14,7 +14,7 @@
                           Mes annonces
                       </button>
 
-                      <button class="btn btn-grey mt-2" @click="getMyAds()">
+                      <button class="btn btn-grey mt-2" @click="getSettings()">
                           Nouvel ajout
                       </button>
 
@@ -27,6 +27,7 @@
               <div class="col-sm-12 col-md-9">
                 <MyAds v-if="showMyAds"></MyAds>
                 <Settings v-if="showSettings"></Settings>
+                <NewAd v-if="showNewAd"></NewAd>
               </div>
 
           </div>
@@ -41,12 +42,14 @@
   <script>
   import MyAds from './MyAds.vue'
   import Settings from '../Settings.vue'
+  import newAd from './NewAd.vue'
 
       export default {
           name: 'Dashboard',
           components: {
             MyAds,
-            Settings
+            Settings,
+            newAd
     },
 
         data(){
@@ -54,7 +57,8 @@
               ads:[],
               parentMessage: 'Hello from the parent component!',
               showMyAds : false,
-              showSettings : false
+              showSettings : false,
+              showNewAd: false
           }
         },
         mounted: function(){
@@ -64,17 +68,24 @@
               getMyAds() {
                 this.showMyAds = true,
                 this.showSettings = false
+                this.showNewAd = false
               },
               getSettings() {
-                // alert('ok');
+                this.showNewAd = true,
                 this.showMyAds = false,
-                this.showSettings = true
+                this.showSettings = false
               },
+              displayNewAd(){
+                this.showNewAd = true,
+                this.showMyAds = false,
+                this.showSettings = false
+
+              }
         }
       }
       </script>
 
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
+  <!-- Ad "scoped" attribute to limit CSS to this component only -->
   <style scoped>
 
   </style>

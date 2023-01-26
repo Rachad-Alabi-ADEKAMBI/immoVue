@@ -83,7 +83,7 @@ import Settings from '../Settings.vue'
               this.showAds = false,
               this.showSettings = true,
               this.showUsers = false
-            },
+            }
       }
     }
     </script>
