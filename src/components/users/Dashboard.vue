@@ -42,14 +42,14 @@
   <script>
   import MyAds from './MyAds.vue'
   import Settings from '../Settings.vue'
-  import newAd from './NewAd.vue'
+  import NewAd from './NewAd.vue'
 
       export default {
           name: 'Dashboard',
           components: {
             MyAds,
             Settings,
-            newAd
+            NewAd
     },
 
         data(){

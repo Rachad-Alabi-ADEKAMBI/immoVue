@@ -1,6 +1,24 @@
 <?php
 session_start();
-include_once '../src/model/model.php';
+
+function getConnexion()
+{
+    return new PDO(
+        'mysql:host=localhost; dbname=immobilierbenin; charset=UTF8',
+        'root',
+        ''
+    );
+}
+
+/*
+function getConnexion()
+{
+    return new PDO(
+        'mysql:host=localhost; dbname=adra7128_immobilierbenin; charset=UTF8',
+        'adra7128_immo',
+        'hjhkbhb#55@hjYGHI'
+    );
+}*/
 
 $error = ['error' => false];
 $action = '';
@@ -1088,6 +1106,85 @@ window.location.replace('../index.php?action=login')
             }
         }
     }
+}
+
+function getUsers()
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    users ORDER BY id DESC");
+    $req->execute();
+    $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getAppartments()
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    ads WHERE type = 'Appartement' ORDER BY id DESC");
+    $req->execute();
+    $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getHouses()
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    ads WHERE type = 'Maison' ORDER BY id DESC");
+    $req->execute();
+    $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getLands()
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    ads WHERE type = 'Terrain' ORDER BY id DESC");
+    $req->execute();
+    $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getAd($id)
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    ads WHERE id = ?
+     ORDER BY id DESC");
+    $req->execute([$id]);
+    $datas = $req->fetch();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getAds()
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    ads ORDER BY id DESC");
+    $req->execute();
+    $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getUser($id)
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    users WHERE id = ?
+    ORDER BY id DESC");
+    $req->execute([$id]);
+    $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
 }
 
 function logout()

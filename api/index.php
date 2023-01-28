@@ -5,14 +5,29 @@ try {
     if (!empty($_GET['demande'])) {
         $url = explode('/', filter_var($_GET['demande'], FILTER_SANITIZE_URL));
         switch ($url[0]) {
-            /*              case "lastSold":
-                        getLastSold();
-                        break;
-*/
+            case 'users':
+                getUsers();
+                break;
+
+            case 'ads':
+                getAds();
+                break;
+
+            case 'appartments':
+                getAppartments();
+                break;
+
+            case 'houses':
+                getHouses();
+                break;
+
+            case 'lands':
+                getLands();
+                break;
 
             case 'item':
                 if (!empty($url[1])) {
-                    getItem($url[1]);
+                    getAd($url[1]);
                 } else {
                     throw new Exception(
                         "Vous n'avez pas renseigné l'id de la demande"

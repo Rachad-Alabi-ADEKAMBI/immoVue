@@ -6,12 +6,6 @@ import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import Vue from 'vue'
 
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-
-
-
-
 
 
 import  '../public/scss/main.css';
