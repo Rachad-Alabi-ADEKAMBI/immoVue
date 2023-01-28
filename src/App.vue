@@ -1,6 +1,7 @@
 <template class="main">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="./index.php"><img src="./assets//img/logo-immo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +12,7 @@
             <li class="nav-item active">
               <router-link to="/" class="nav-link" >
               Accueil <span class="sr-only">(current)</span>
-              </router-link> |
+              </router-link>
 
             </li>
 
@@ -54,14 +55,12 @@
             </li>  -->
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button class="btn my-2 my-sm-0" type="submit">
-                <router-link to="/register" >Register    </router-link>
-            </button>
 
-            <button class="btn my-2 my-sm-0" type="submit">
+            <button class="btn my-2 " type="submit">
                 <router-link to="/login" >Login     </router-link>
             </button>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+
+            <button class="btn btn-outline-success m-2" type="submit">
                 <a href="./api/api.php?action=logout">
                     Déconnexion
                 </a>
@@ -69,6 +68,8 @@
         </form>
     </div>
 </nav>
+</div>
+
   <div class="content">
     <router-view/>
   </div>

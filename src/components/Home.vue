@@ -3,23 +3,9 @@
 <div class="content">
     <section class='section bg-light'>
        <div class="container">
-            <div class="row-sm-12 col-md-12">
-                <div class="hero p-2">
-                    <h1>
-                        Bienvenue à <br>
-                        <span>
-                            IMMOBILIER BENIN
-                        </span>
-                    </h1>
-
-                    <p>
-                        Site d'annonces de vente et de location de biens immobiliers
-                    </p>
-                </div>
-            </div>
 
             <div class="row mx-auto pt-5">
-                <Tags class="col-md-3">
+                <Tags class="col-sm-12 col-md-3">
                 </Tags>
 
                 <div class="col-sm-12 col-md-9">
@@ -27,9 +13,9 @@
                         <div class="container ">
                             <div class="row">
                                 <div class="list__heading">
-                                    <h2 class='text-center mt-2'>
+                                    <p class='span text-center'>
                                         Derniers ajouts
-                                    </h2>
+                                    </p>
                                 </div>
 
                                 <Box :message="parentMessage"></Box>

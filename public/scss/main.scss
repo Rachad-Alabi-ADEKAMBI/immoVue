@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 @import url('https://fonts.cdnfonts.com/css/source-sans-pro');
 
+
+$white: white;
+$green: #95C41F;
+$green-dark: #253303;
+$grey: #F1F1F1;
+$black:black;
+$blue: #6a70a1;
+$grey-dark: #6F6F6F;
+$grey-light: #F6F6F6;
+
+
 html, body{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -8,17 +19,8 @@ html, body{
     padding: 0;
     margin: 0;
     font-size: 1em;
+    background-color: $grey;
 }
-
-$white: white;
-$green: #95C41F;
-$green-dark: #253303;
-$grey: grey;
-$black:black;
-$blue: #6a70a1;
-$grey-dark: #69717D;
-$grey-light: #F1F1F1;
-
 
 @mixin flex($flex-direction: row){
     display: flex;
@@ -123,6 +125,7 @@ i{
 
 
 }
+
 .btn{
    @include btn();
 }
@@ -242,132 +245,109 @@ span{
 
           .container{
 
-            .hero{
-                width: 100%;
-                height: auto;
-                background-color: $blue;
-                display: block;
-                text-align: center;
-                padding-top: 80px;
-                color: $white;
-
-                h1{
-                    margin: 10px auto;
-                    font-size: 0.9em;
-                    font-weight: normal;
-
-                    span{
-                        font-size: 2.5em;
-                    color: $white;
-                    font-family: Georgia, 'Times New Roman', Times, serif;
-                    }
-                }
-
-                p{
-                    font-weight: bold;
-                    color: $white;
-                    font-size: 1.5em;
-                }
-
-
-
-                &__search{
-                    width: 60%;
-                    height: 50px;
-                    @include flex();
-                    margin: 50px auto;
-                    justify-content: baseline;
-
-                   .search{
-                        .search__item{
-                            margin: 5px auto;
-                            label{
-                                flex: 1;
-                                height: 100%;
-
-                                select{
-                                    height: 100%;
-                                    width: 100%;
-                                }
-
-                                button{
-                                    width: 100%;
-                                    height: 100%;
-                                    background-color: $green;
-                                    color: $white;
-                                }
-
-                                button:hover{
-                                    background-color: $green-dark;
-                                }
-                            }
-                        }
-
-                   }
-                }
-
-                p{
-                    width: 80%;
-                    margin: 60px auto;
-                }
-            }
-
             .row{
-
-/*               .item {
-                text-align: center;
-                position: relative;
-                    img{
-                        width: 80%;
-                        margin: auto;
-                        height: 60vh;
-                    }
-
-                    .action{
-                        position: absolute;
-                        background-color: $blue;
-                        color: $white;
-                        top: 40px;
-                        left: 140px;
-                        width: max-content;
-                        font-weight: bold;
-                        text-align: center;
-                    }
-               }
-
-               .tags{
-                background-color: rgb(236, 226, 226);
+                .tags{
+                    background-color: $white;
 
                     &__heading{
-                        height: 70px;
-                        span{
-                            color: $black;
-                            font-weight: bold;
-                            font-size: 1.2em;
+                        background-color: $grey-light;
+                        width: 100%;
+                        height: 50px;
+
+                        .span{
+                            margin: auto;
+                            color: $grey-dark;
+                            font-size: 1.3em;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+               .list{
+                    background-color: $white;
+
+                    &__heading{
+                        background-color: $grey-light;
+                        height: 50px;
+
+                        .span{
+                            margin: auto;
+                            color: $grey-dark;
+                            font-size: 1.3em;
+                            font-weight: 800;
+
                         }
                     }
 
-                    &__body{
-                        .image{
-                            width: 150px;
-                            margin: auto;
-                            height: 150px;
-                            background-color: #95C41F;
+                    .box{
+                        @include flex();
+                        margin: 20px auto;
 
+                        &__img{
                             img{
-                                width: 90%;
-                                margin: auto;
+                                width: 320px;
+                                height: 200px;
+
+                            }
+
+                            p{
+                                margin: 15px auto;
+                                font-style: italic;
+
+                            span{
+                                color: $grey;
+                            }
+                            }
+                        }
+
+                        &__infos{
+                        @include flex(column);
+                            flex: 1;
+                            text-align: left;
+                            margin-left: 10px;
+
+                            h2{
+                                text-align: left;
+                                font-size: 1.8em;
+                                color: $blue;
+                            }
+
+                                span{
+                                    color: $grey;
+                                    font-size: 1em;
+                                font-weight: 400;
+                                font-style: italic;
+                                }
+
+                                .price{
+                                    color: $blue;
+                                    font-style: italic;
+                                    font-size: 1.2em;
+                                }
+                            .icons{
+                                width: 400px;
+                                @include flex();
+                                justify-content: start;
+
+                                .icon{
+                                    margin: 10px;
+                                    background-color: $grey-light;
+                                    height: 25px;
+
+                                    i{
+                                        color: $grey-dark;
+                                    }
+
+                                }
+                            }
+
+                            .btn{
+                                //: right;
+                                margin-right: 10px;
                             }
                         }
                     }
-
-               }
-               */
-
-               .list{
-                background-color: rgb(236, 226, 226);
-
-               }
+                }
 
                .item{
                 display: block;
@@ -407,7 +387,6 @@ span{
                         .images{
                             @include flex();
                             margin: 10px auto;
-                            background-color: red;
                             img{
                                 width: 80px;
                                 height: 60px;
@@ -439,78 +418,8 @@ span{
 
                .agent{
                 margin: 10px auto;
-                background-color: red;
                }
 
-
-            .box{
-                @include flex();
-                margin: 20px auto;
-
-                &__img{
-                    img{
-                        width: 320px;
-                        height: 200px;
-
-                    }
-
-                    p{
-                        margin: 15px auto;
-                        font-style: italic;
-
-                       span{
-                        color: $grey;
-                       }
-                    }
-                }
-
-                &__infos{
-                   @include flex(column);
-                    flex: 1;
-                    text-align: left;
-                    margin-left: 10px;
-
-                    h3{
-                        text-align: left;
-                        font-size: 1.8em;
-                        color: $grey-dark;
-                    }
-
-                        span{
-                            color: $grey;
-                            font-size: 1em;
-                        font-weight: 400;
-                        font-style: italic;
-                        }
-
-                        .price{
-                            color: $blue;
-                            font-style: italic;
-                            font-size: 1.2em;
-                        }
-                    .icons{
-                        width: 400px;
-                        @include flex();
-                        justify-content: start;
-
-                        .icon{
-                            margin: 10px;
-                            background-color: $grey-light;
-                            height: 25px;
-
-                            i{
-                                color: $grey-dark;
-                            }
-
-                        }
-                    }
-
-                    .btn{
-                        //: right;
-                        margin-right: 10px;
-                    }
-                }
-            }
                 h1{
                     color: $blue;
                 }
@@ -549,60 +458,6 @@ span{
             }
 
           }
-            .blue{
-             height: auto;
-
-                .container{
-                    .boxes{
-                        @include flex();
-                        width: 100%;
-                        justify-content: space-between;
-                        &__box{
-                            height: 350px;
-                            padding: 5px;
-                            flex: 1;
-                            margin: 10px;
-                            padding-top: 80px;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            background-size: cover;
-
-                            p{
-                                width: 80%;
-                                margin: auto;
-                                line-height: 2em;
-                                color: $white;
-                                font-weight: bold;
-
-                                a{
-                                    color: $white;
-                                }
-                            }
-
-                            .btn{
-                                margin: 40px auto;
-                            }
-                        }
-
-                        .box-l{
-                      /*      background-image:
-                            linear-gradient(rgba(87, 139, 85, 0.548),
-                            rgba(32, 37, 70, 0.842)),
-                             url("/img/home1.jpeg");
-                             */
-                        }
-
-                        .box-r{
-                         /*   background-image:  linear-gradient(rgba(63, 63, 165, 0.548),
-                            rgba(22, 33, 92, 0.842)),
-
-                             url("../img/bureau2.jpg");
-                             */
-                        }
-                    }
-                }
-            }
-
 
 
             .about{

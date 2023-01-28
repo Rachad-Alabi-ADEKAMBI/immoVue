@@ -6,9 +6,9 @@
     </div>
 
     <div class="box__infos">
-        <h3>
+        <h2>
             {{ message }}
-        </h3>
+        </h2>
 
         <span>
             <i class="bi bi-geo-alt"></i> locat

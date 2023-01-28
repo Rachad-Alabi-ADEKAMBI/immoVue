@@ -1,16 +1,17 @@
 <template>
-    <div class="tags bg-light">
-                    <div class="tags__heading text-center pt-2">
-                        <span>
+   <div class="pt-3">
+    <div class="tags ">
+                    <div class="tags__heading text-center">
+                        <p class="span">
                             Type de biens
-                        </span>
+                        </p>
                     </div>
                     <hr>
 
                     <div class="tags__body text-center">
                         <div class="tag">
                             <router-link to="/appartments" >
-                                <i class="bi bi-arrow-right"></i>Appartments
+                                <i class="bi bi-car-front"></i>  Appartments
                              </router-link>
                         </div>
 
@@ -31,7 +32,60 @@
 
                         <hr>
                     </div>
-                </div>
+    </div>
+
+    <br>
+
+    <div class="tags ">
+                    <div class="tags__heading text-center">
+                        <p class="span">
+                            Localités
+                        </p>
+                    </div>
+                    <hr>
+
+                    <div class="tags__body text-center">
+                        <div class="tag">
+                            <router-link to="/tag=" >
+                                <i class="bi bi-arrow-right"></i>Bohicon
+                             </router-link>
+                        </div>
+
+                        <hr>
+                        <div class="tag">
+                            <router-link to="/cotonou" >
+                                <i class="bi bi-arrow-right"></i> Calavi
+                             </router-link>
+                        </div>
+
+                        <hr>
+
+                        <div class="tag">
+                            <router-link to="/lands" >
+                                <i class="bi bi-arrow-right"></i> Cotonou
+                             </router-link>
+                        </div>
+
+                        <hr>
+
+                        <div class="tag">
+                            <router-link to="/tag=" >
+                                <i class="bi bi-arrow-right"></i> Porto-Novo
+                             </router-link>
+                        </div>
+
+                        <hr>
+                        <div class="tag">
+                            <router-link to="/cotonou" >
+                                <i class="bi bi-arrow-right"></i> Parakou
+                             </router-link>
+                        </div>
+
+
+                        <hr>
+                    </div>
+    </div>
+   </div>
 </template>
 
 <script>
