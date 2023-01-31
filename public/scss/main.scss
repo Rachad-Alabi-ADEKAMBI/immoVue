@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.cdnfonts.com/css/source-sans-pro');
 
 
 $white: white;
-$green: #95C41F;
+$green: #7dbf4a;
 $green-dark: #253303;
 $grey: #F1F1F1;
 $black:black;
 $blue: #6a70a1;
+$blue-clear: #3b5998;
 $grey-dark: #6F6F6F;
 $grey-light: #F6F6F6;
+$border: rgb(235, 223, 223);
+$red: #cb2027;
 
 
 html, body{
@@ -37,9 +40,17 @@ html, body{
     border-color: $bc;
     max-width: 130px;
     min-width: 110px;
-
     cursor: pointer;
 
+}
+
+@mixin share-btn(){
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: table;
+    margin: 5px;
 }
 /*
 @keyframes card {
@@ -103,6 +114,15 @@ i{
     }
 }
 
+.share-btn i{
+        font-size: 1.5em;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        color: $white;
+    }
+
+
 .required{
     color: red;
     font-weight: bold;
@@ -111,8 +131,9 @@ i{
 
 .menu{
     width: 100%;
-    background-color: #535353;
-    height: 70vh;
+    background-color: $grey-dark;
+    height: 75vh;
+    min-height: 75vh;
     overflow: hidden;
     text-align: center;
     @include flex(column);
@@ -120,10 +141,20 @@ i{
 
     .btn{
         margin: 5px auto;
-        min-width: 130px;
+        width: 150px;
     }
 
 
+
+}
+
+.dashboard{
+    background-color: $grey-dark;
+    height: 75vh;
+    min-height: 75vh;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px
 }
 
 .btn{
@@ -131,7 +162,7 @@ i{
 }
 
 .btn-grey{
-   @include btn($white, $grey, $grey);
+   @include btn();
 }
 
 
@@ -162,13 +193,11 @@ i{
 .action{}
 
 .btn-primary{
-    background-color: $blue;
-    border: 1px $blue;
-    font-weight: bold;
-    a{
-        color: $white;
-        font-weight: bold;
-    }
+   @include btn();
+
+   a{
+    color: $white;
+   }
 }
 
 .btn-primary:hover{
@@ -248,17 +277,37 @@ span{
             .row{
                 .tags{
                     background-color: $white;
+                    border: 1px $border solid;
+                    margin-bottom: 15px;
+
 
                     &__heading{
                         background-color: $grey-light;
                         width: 100%;
                         height: 50px;
+                        display: table;
 
                         .span{
                             margin: auto;
                             color: $grey-dark;
                             font-size: 1.3em;
                             font-weight: 600;
+                            display: table-cell;
+                            vertical-align: middle;
+                            text-align: center;
+                        }
+                    }
+
+                    .iframe{
+                        width: 200px;
+                        height: 200px;
+                        text-align: center;
+                        margin: auto;
+
+                        iframe{
+                            width: 195px;
+                            height:195px;
+                            margin: auto;
                         }
                     }
                 }
@@ -282,6 +331,7 @@ span{
                     .box{
                         @include flex();
                         margin: 20px auto;
+                        border: 1px solid  $border;
 
                         &__img{
                             img{
@@ -358,15 +408,19 @@ span{
                     width: 100%;
                     @include flex();
 
-                    span{
-                        color: blue;
-                        float: left;
-                        font-size: 1.3em;
-                        margin: auto 0;
+                    h2{
+                        color: $blue;
                     }
+
+
 
                     .price{
                         float: right;
+                        color: $blue;
+                        margin: auto 10px auto auto;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 1.8em;
                     }
                 }
 
@@ -395,6 +449,22 @@ span{
                         }
                     }
 
+                    &__images{
+                        @include flex();
+                        justify-content: space-evenly;
+
+
+                    img{
+                        width: 100%;
+                        padding: 5px;
+                        cursor: pointer;
+                    }
+
+                    img:hover{
+
+                    }
+                }
+
                     &__text{
                         text-align: left;
                         margin: 10px auto;
@@ -402,43 +472,91 @@ span{
                     }
 
                     &__more-infos{
+                        h3{
 
-                    }
+                        }
 
-                    &__share{
-                        ul{
-                            li{
-                                display: inline;
+                        .infos{
+                                @include flex();
+                                justify-content: start;
+
+                               .info{
+                                margin: 5px;
+
+                                i{
+                                    color: $grey-dark;
+                                }
+                               }
+                            }
+                        }
+
+
+                    .share-btns{
+                        width: 200px;
+                        float: left;
+                               @include flex();
+
+                                .share-btn{
+                                  @include share-btn();
+                                }
+
+                                .whatsapp{
+                                    background-color: $green;
+                                }
+
+                                .facebook{
+                                    background-color: $blue-clear;
+                                }
+
+                                .mail{
+                                    background-color: $blue;
+                                }
+
+                               }
                             }
                         }
                     }
 
-                }
-               }
 
                .agent{
-                margin: 10px auto;
-               }
+                margin: auto;
 
-                h1{
-                    color: $blue;
-                }
+                &__infos{
+                    @include flex();
+                    justify-content: start;
+                    margin: auto 15px;
 
-                .card-text{
-                    i{
-                        color: $blue;
+                    img{
+                        width: 150px;
+                        height: 90px;
+                    }
+
+                    &__list{
+                        margin-left: 10px;
+                        display: block;
+
+                        .agent-contact{
+                            @include flex();
+
+                            .share-btn{
+                                @include share-btn();
+                            }
+
+                            .whatsapp{
+                                background-color: $green;
+                            }
+
+                            .phone{
+                                background-color: $red;
+                            }
+
+                        }
+
                     }
                 }
 
-                .price{
-                    font-size: 1.5em;
-                    font-weight: 800;
-                }
 
-                .img{
-                    width: 150px;
-                }
-            }
+               }
 
             .contact{
 
@@ -457,7 +575,7 @@ span{
                 }
             }
 
-          }
+        }}
 
 
             .about{
@@ -487,7 +605,7 @@ span{
             }
         }
     }
-}
+
 
 .footer{
    // background-color: rgb(83, 80, 80);

@@ -31,7 +31,7 @@
 
             <div class="icon">
                 <i class="bi-egg-fried"></i>
-                1 cuisne
+                1 cuisine
             </div>
 
             <div class="icon">
@@ -42,6 +42,11 @@
             <div class="icon">
                 <i class="fas fa-warehouse"></i>
                 1 magasin
+            </div>
+
+            <div class="icon">
+                <i class="fas fa-layer-group"></i>
+                500 m2
             </div>
         </div>
 

@@ -11,6 +11,7 @@ import HousesView from '../views/HousesView.vue'
 import AppartmentsView from '../views/AppartmentsView.vue'
 import CguView from '../views/CguView.vue'
 import ItemView from '../views/ItemView.vue'
+import TagView from '../views/TagView.vue'
 
 const routes = [
   {
@@ -110,6 +111,15 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/ContactView.vue')
+  },
+
+  {
+    path: '/tag',
+    name: 'tag',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/TagView.vue')
   },
 
   {

@@ -1,16 +1,16 @@
 <template>
         <div class="container"  v-if='showAll'>
-            <div class="row text-center">
-                <div class="search mx-auto pt-2">
+            <div class="row">
+                <div class="search">
                     <label for="">Recherche par mot clé <br>
                         <input type="text">
                     </label>
                 </div>
-            </div>
+            </div> <br>
             <div class="row">
-                <div class="col-sm-12 col-md-10 mx-auto mt-3">
+                <div class="col-sm-12 col-md-10">
                     <div class="table-responsive-md">
-                        <h1 class="text-center">
+                        <h1 class="">
                             Toutes les annonces
                         </h1>
                         <table class="table table-bordered table-hover">
@@ -52,7 +52,7 @@
 
         <div class="container" v-if="showDelete">
         <div class="row">
-           <div class="col-sm-12 col-md-6 mx-auto">
+           <div class="col-sm-12 col-md-6 ">
             <form action="" class="bg-light">
                 <div class="form__close text-left">
                     <i class="bi bi-x"></i>
@@ -62,7 +62,7 @@
                 </p>
 
                 <div class="form-group row">
-                            <div class="col-sm-10 mx-auto"><br>
+                            <div class="col-sm-10"><br>
                                 <input type="text" class="form-control" id="" name='reason'
                                 placeholder="Motif de suppression" value=''>
                             </div>

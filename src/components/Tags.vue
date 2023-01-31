@@ -1,9 +1,9 @@
 <template>
-   <div class="pt-3">
+   <div class="">
     <div class="tags ">
                     <div class="tags__heading text-center">
                         <p class="span">
-                            Type de biens
+                            <i class="fas fa-list"></i> Type de biens
                         </p>
                     </div>
                     <hr>
@@ -37,23 +37,23 @@
     <br>
 
     <div class="tags ">
-                    <div class="tags__heading text-center">
+        <div class="tags__heading text-center">
                         <p class="span">
-                            Localités
+                            <i class="fas fa-location-pin"></i> Localités
                         </p>
                     </div>
                     <hr>
 
                     <div class="tags__body text-center">
                         <div class="tag">
-                            <router-link to="/tag=" >
+                            <router-link to="/tag" >
                                 <i class="bi bi-arrow-right"></i>Bohicon
                              </router-link>
                         </div>
 
                         <hr>
                         <div class="tag">
-                            <router-link to="/cotonou" >
+                            <router-link to="/tag" >
                                 <i class="bi bi-arrow-right"></i> Calavi
                              </router-link>
                         </div>
@@ -61,7 +61,7 @@
                         <hr>
 
                         <div class="tag">
-                            <router-link to="/lands" >
+                            <router-link to="/tag" >
                                 <i class="bi bi-arrow-right"></i> Cotonou
                              </router-link>
                         </div>
@@ -80,9 +80,6 @@
                                 <i class="bi bi-arrow-right"></i> Parakou
                              </router-link>
                         </div>
-
-
-                        <hr>
                     </div>
     </div>
    </div>

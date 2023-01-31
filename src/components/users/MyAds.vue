@@ -1,14 +1,14 @@
 <template>
     <div class="container"  v-if='showAll'>
-        <div class="row text-center">
-            <div class="search mx-auto pt-2">
+        <div class="">
+            <div class="search">
                 <label for="">Recherche par mot clé <br>
                     <input type="text">
                 </label>
             </div>
-        </div>
+        </div> <br>
         <div class="row">
-            <div class="col-sm-12 col-md-10 mx-auto mt-3">
+            <div class="col-sm-12 col-md-10">
                 <div class="table-responsive-md">
                     <h1 class="text-center">
                         Mes annonces

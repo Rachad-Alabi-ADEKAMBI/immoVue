@@ -25,6 +25,39 @@
                                 <hr>
                             </div>
 
+                            <hr>
+
+                            <div class="row">
+                                <div class="list__heading">
+                                    <p class='span text-center'>
+                                        Derniers ajouts
+                                    </p>
+                                </div>
+
+                                <Box :message="parentMessage"></Box>
+                                <Box :message="parentMessage"></Box>
+                                <Box :message="parentMessage"></Box>
+                                <br>
+                                <hr>
+                            </div>
+
+                        <br>
+
+                            <div class="row">
+                                <div class="list__heading">
+                                    <p class='span text-center'>
+                                        Les plus consultées
+                                    </p>
+                                </div>
+
+                                <Box :message="parentMessage"></Box>
+                                <Box :message="parentMessage"></Box>
+                                <Box :message="parentMessage"></Box>
+
+                                <hr>
+                            </div>
+
+
 
                         </div>
                     </div>

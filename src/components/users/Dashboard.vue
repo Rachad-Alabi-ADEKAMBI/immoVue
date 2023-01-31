@@ -1,33 +1,32 @@
 <template>
     <section class="section">
       <div class="container">
-          <div class="row ">
-              <p class=" mt-2 mx-auto text-center">
-                  Bonjour <span> user</span>, ravi de vous revoir
-              </p>
-          </div>
-
           <div class="row">
               <div class="col-sm-12 col-md-3">
                   <div class="menu">
-                      <button class="btn btn-grey mt-2" @click="getMyAds()">
+                      <button class="btn btn-menu" @click="getMyAds()">
                           Mes annonces
                       </button>
 
-                      <button class="btn btn-grey mt-2" @click="getSettings()">
+                      <button class="btn btn-menu" @click="getSettings()">
                           Nouvel ajout
                       </button>
 
-                      <button class="btn btn-grey mt-2" @click='getSettings()'>
+                      <button class="btn btn-menu" @click='getSettings()'>
                           Paramètres
                       </button>
                   </div>
               </div>
 
               <div class="col-sm-12 col-md-9">
-                <MyAds v-if="showMyAds"></MyAds>
+                <div class="dashboard">
+                    <p class="">
+                  Bonjour <span> user</span>, ravi de vous revoir
+              </p>
+                    <MyAds v-if="showMyAds"></MyAds>
                 <Settings v-if="showSettings"></Settings>
                 <NewAd v-if="showNewAd"></NewAd>
+                </div>
               </div>
 
           </div>

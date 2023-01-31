@@ -1,12 +1,6 @@
 <template>
   <section class="section">
     <div class="container">
-        <div class="row ">
-            <p class=" mt-2 mx-auto text-center">
-                Bonjour <span> boss</span>, ravi de vous revoir
-            </p>
-        </div>
-
         <div class="row">
             <div class="col-sm-12 col-md-3">
                 <div class="menu">
@@ -26,9 +20,11 @@
             </div>
 
             <div class="col-sm-12 col-md-9">
-              <Ads v-if="showAds"></Ads>
+                <div class="dashboard">
+                    <Ads v-if="showAds"></Ads>
               <Users v-if="showUsers"></Users>
               <Settings v-if="showSettings"></Settings>
+                </div>
             </div>
 
         </div>
