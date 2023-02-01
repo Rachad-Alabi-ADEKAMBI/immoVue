@@ -1168,7 +1168,7 @@ function getAds()
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
-    ads ORDER BY id DESC");
+    ads ORDER BY id DESC LIMIT 3");
     $req->execute();
     $datas = $req->fetchAll();
     $req->closeCursor();

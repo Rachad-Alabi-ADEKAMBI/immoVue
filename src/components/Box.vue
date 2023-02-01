@@ -5,9 +5,9 @@
         <p><span><i class="bi bi-tag"></i>Etat:</span> En vente</p>
     </div>
 
-    <div class="box__infos">
+    <div class="box__infos" >
         <h2>
-            {{ message }}
+            {{ id }}
         </h2>
 
         <span>
@@ -62,10 +62,29 @@
 </template>
 
 <script>
+import axios from "axios";
+
+
 export default {
       name: 'Box',
   props: {
-    message: ''
-  }
+    message: '',
+    id: ''
+  },
+  data(){
+    return{
+        details: []
+    }
+  },
+  mounted: function(){
+   // this.getDetails();
+  },
+  methods:{
+    getDetails(){
+        axios.get('http://127.0.0.1/immo/api/item/1').then(
+                response =>
+                this.details = response.data);
+            }
+    }
 }
 </script>

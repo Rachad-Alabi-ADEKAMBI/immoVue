@@ -18,25 +18,9 @@
                                     </p>
                                 </div>
 
-                                <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
-
-                                <hr>
-                            </div>
-
-                            <hr>
-
-                            <div class="row">
-                                <div class="list__heading">
-                                    <p class='span text-center'>
-                                        Derniers ajouts
-                                    </p>
+                                <div :message="parentMessage" v-for='ad in ads' :key="id">
+                                    <Box  :id="ad.id"></Box>
                                 </div>
-
-                                <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
                                 <br>
                                 <hr>
                             </div>
@@ -71,6 +55,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 import Box from './Box.vue'
 import Tags from './Tags.vue'
 
@@ -92,10 +78,9 @@ import Tags from './Tags.vue'
       },
       methods:{
         getAds() {
-         /*   axios.get('http://127.0.0.1/immo/api/ads').then(
+           axios.get('http://127.0.0.1/immo/api/ads').then(
                 response =>
                 this.ads = response.data);
-                */
             }
 
       }
