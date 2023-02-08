@@ -1,35 +1,33 @@
 <template>
-   <div class="container text-center mx-auto buttons fw-bold " v-if="showAddBtn">
-            <a href="/dashboard">
-                <i class="fas fa-x text-center mx-auto"></i> fermer
-            </a>
-        <div class="row ">
-            <h2 class="text-center">
-                Nouvelle annonce
-            </h2> <br>
-
-            <div class="buttons">
-                <button class='btn btn-primary' @click='displayAddHouse()'>
+   <div class="container text-left mx-auto buttons fw-bold " v-if="showAddBtn">
+        <div class="row text-left" >
+                <div class="col-12">
+                            <h1 class="text-blue text-left">
+                                Nouvelle annonce
+                            </h1>
+                            <div class="buttons">
+                <button class='btn btn-primary m-1' @click='displayAddHouse()'>
                     Maison
                 </button>
-                <button class='btn btn-primary' @click='displayAddAppartment()'>
+                <button class='btn btn-primary m-1' @click='displayAddAppartment()'>
                     Appartement
                 </button>
 
-                <button class='btn btn-primary' @click='displayAddLand()'>
+                <button class='btn btn-primary m-1' @click='displayAddLand()'>
                     Terrain
                 </button>
             </div>
+                </div>
         </div>
     </div>
 
     <div class="container" v-if='showAddAppartment'>
-        <div class="row mt-4  mx-auto" >
-            <div class="col-sm-12 col-md-9 mx-auto bg-light">
+        <div class="row mt-4 " >
+            <div class="col-sm-12 col-md-10 col-lg-12 ml-0 bg-light">
             <form action="./api/api.php?action=addAppartment" method='POST' class="form" enctype="multipart/form-data">
-                <div class="close" @click='displayAddBtn()'>
-                    <i class="fas fa-x"></i> fermer
-                </div> <br>
+                <div class="close text-left" @click='displayAddBtn()'>
+                <i class="bi bi-x" ></i>
+            </div>  <br>
                 <h3 class="text-center">
                     Nouvelle annonce catégorie Appartement
                 </h3>

@@ -241,6 +241,18 @@ function search()
     }
 */
 
+function getMyAds($id)
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT *  FROM ads
+    WHERE seller_id = ? ORDER BY id DESC");
+    $req->execute([$id]);
+    $datas = $req->fetchAll(PDO::FETCH_ASSOC);
+    $req->closeCursor();
+    sendJSON($datas);
+    return $datas;
+}
+
 function iterAds($user_id)
 {
     $pdo = getConnexion();
@@ -1159,7 +1171,7 @@ function getAd($id)
     ads WHERE id = ?
      ORDER BY id DESC");
     $req->execute([$id]);
-    $datas = $req->fetch();
+    $datas = $req->fetchAll();
     $req->closeCursor();
     sendJSON($datas);
 }

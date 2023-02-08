@@ -4,16 +4,16 @@
           <div class="row">
               <div class="col-sm-12 col-md-3">
                   <div class="menu">
-                      <button class="btn btn-menu" @click="getMyAds()">
-                          Mes annonces
+                      <button class="btn btn-white" @click="getMyAds()">
+                        <i class="bi-list-task"></i> Mes annonces
                       </button>
 
-                      <button class="btn btn-menu" @click="getSettings()">
-                          Nouvel ajout
+                      <button class="btn btn-white" @click="displayNewAd()">
+                        <i class="bi bi-plus-circle"></i> Nouvel ajout
                       </button>
 
-                      <button class="btn btn-menu" @click='getSettings()'>
-                          Paramètres
+                      <button class="btn btn-white" @click='getSettings()'>
+                        <i class="bi bi-gear"></i>  Paramètres
                       </button>
                   </div>
               </div>
@@ -70,9 +70,9 @@
                 this.showNewAd = false
               },
               getSettings() {
-                this.showNewAd = true,
+                this.showNewAd = false,
                 this.showMyAds = false,
-                this.showSettings = false
+                this.showSettings = true
               },
               displayNewAd(){
                 this.showNewAd = true,

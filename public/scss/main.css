@@ -56,6 +56,14 @@ i {
   margin: auto;
 }
 
+.text-grey {
+  color: grey;
+}
+
+.text-blue {
+  color: #3b5998;
+}
+
 .fw-bold {
   font-weight: bold;
   margin: 15px auto;
@@ -95,19 +103,55 @@ i {
   flex-wrap: wrap;
   line-height: 1em;
   justify-content: start;
+  color: white;
 }
 .menu .btn {
   margin: 5px auto;
-  width: 150px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 170px;
+}
+.menu .btn i {
+  color: white;
 }
 
 .dashboard {
-  background-color: #6F6F6F;
-  height: 75vh;
+  height: auto;
   min-height: 75vh;
   width: 100%;
   text-align: left;
   padding-left: 10px;
+}
+.dashboard .search-bar i {
+  font-weight: bold;
+  cursor: pointer;
+}
+.dashboard .search-bar .i:hover {
+  font-weight: bold;
+}
+.dashboard .search-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  line-height: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 15px 0 auto auto;
+  cursor: pointer;
+}
+.dashboard .search-icon .text {
+  display: inline;
+  margin-top: 5px;
+}
+.dashboard .search-icon i, .dashboard .search-icon .text {
+  transition: 500ms ease-in-out;
+}
+.dashboard .search-icon:hover i, .dashboard .search-icon:hover .text {
+  color: #3b5998;
+  font-weight: bold;
 }
 
 .btn {
@@ -130,19 +174,19 @@ i {
   cursor: pointer;
 }
 
+.btn-white {
+  color: white;
+  background-color: #6a70a1;
+  border: 1px solid;
+  border-color: #6a70a1;
+  max-width: 130px;
+  min-width: 110px;
+  cursor: pointer;
+}
+
 .btn-grey:hover {
   background-color: #6a70a1;
   color: white;
-}
-
-.buttons {
-  display: block;
-  text-align: center;
-  margin: auto;
-  width: 80%;
-}
-.buttons .btn {
-  margin: 10px;
 }
 
 .table-img {

@@ -101,6 +101,14 @@ i{
     margin: auto;
 }
 
+.text-grey{
+    color: grey
+}
+
+.text-blue{
+    color: $blue-clear;
+}
+
 .fw-bold{
     font-weight: bold;
     margin: 15px auto;
@@ -138,10 +146,16 @@ i{
     text-align: center;
     @include flex(column);
     justify-content: start;
+    color: $white;
 
     .btn{
         margin: 5px auto;
-        width: 150px;
+        width: max-content;
+        min-width: 170px;
+
+        i{
+            color: $white;
+        }
     }
 
 
@@ -149,12 +163,45 @@ i{
 }
 
 .dashboard{
-    background-color: $grey-dark;
-    height: 75vh;
+    height: auto;
     min-height: 75vh;
     width: 100%;
     text-align: left;
-    padding-left: 10px
+    padding-left: 10px;
+
+    .search-bar{
+        i{
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .i:hover{
+            font-weight: bold;
+        }
+    }
+
+    .search-icon{
+        @include flex();
+        width: fit-content;
+        margin: 15px 0 auto auto;
+        cursor: pointer;
+
+        .text{
+            display: inline;
+            margin-top: 5px;
+        }
+
+        i,.text{
+            transition: 500ms ease-in-out;
+        }
+    }
+
+    .search-icon:hover{
+        i,.text{
+            color: $blue-clear;
+            font-weight: bold;
+        }
+    }
 }
 
 .btn{
@@ -165,22 +212,17 @@ i{
    @include btn();
 }
 
+.btn-white{
+    @include btn($white, $blue, $blue);
+}
+
 
 .btn-grey:hover{
     background-color: $blue;
     color: $white;
 }
 
-.buttons{
-    display: block;
-    text-align: center;
-    margin: auto;
-    width: 80%;
 
-    .btn{
-        margin: 10px;
-    }
-}
 
 .table-img{
     width: 90px;

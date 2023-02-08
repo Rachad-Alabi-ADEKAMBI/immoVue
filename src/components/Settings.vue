@@ -1,11 +1,16 @@
 <template>
     <div class="container">
+        <div class="row" >
+                <div class="col-9">
+                            <h1 class="text-blue text-left">
+                                Paramètres
+                            </h1>
+                    </div>
+            </div>
         <div class="row">
-            <form class="needs-validation" action='./api/api.php?action=parameters' enctype="multipart/form-data"
+            <form class="needs-validation p-2 bg-light"
+            action='./api/api.php?action=parameters' enctype="multipart/form-data"
             method='POST'>
-            <h2>
-                Paramètres
-            </h2>
 
             <div class="form-row">
                 <div class="col-6 ">
@@ -16,11 +21,29 @@
             </div> <br>
 
             <div class="form-row">
+                <div class="col-6 ">
+                    <label for="validationCustom01">Image</label>
+                    <input type="file" class="form-control" id="validationCustom01" placeholder=""
+                        name='pic'>
+                </div>
+            </div> <br>
+
+            <div class="form-row">
                 <div class="col-6">
-                    <label for="validationCustom01">Nouveau mot de passe</label>
+                    <label for="">A propos: </label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder=""
+                        name='about'>
+                </div>
+            </div> <br>
+
+
+
+            <div class="form-row">
+                <div class="col-6">
+                    <label for="validationCustom01">Nouveau mot de passe:</label>
                     <input type="password" class="form-control" id="validationCustom01" placeholder="Mot de passe"
                         name='pass1'>
-                </div>
+                </div> <br>
                 <div class="col-6">
                     <label for="validationCustom02">Confirmez mot de passe</label>
                     <input type="password" class="form-control" id="validationCustom02"

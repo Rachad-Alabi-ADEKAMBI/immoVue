@@ -11,14 +11,14 @@
                     <div class="tags__body text-center">
                         <div class="tag">
                             <router-link to="/appartments" >
-                                <i class="bi bi-car-front"></i>  Appartments
+                                <i class="bi bi-building"></i>  Appartments
                              </router-link>
                         </div>
 
                         <hr>
                         <div class="tag">
                             <router-link to="/houses" >
-                                <i class="bi bi-arrow-right"></i> Maisons
+                                <i class="bi bi-house"></i> Maisons
                              </router-link>
                         </div>
 
@@ -26,7 +26,7 @@
 
                         <div class="tag">
                             <router-link to="/lands" >
-                                <i class="bi bi-arrow-right"></i> Terrains
+                                <i class="bi bi-signpost"></i> Terrains
                              </router-link>
                         </div>
 
@@ -39,7 +39,7 @@
     <div class="tags ">
         <div class="tags__heading text-center">
                         <p class="span">
-                            <i class="fas fa-location-pin"></i> Localités
+                            <i class="bi bi-geo-alt"></i> Localités
                         </p>
                     </div>
                     <hr>

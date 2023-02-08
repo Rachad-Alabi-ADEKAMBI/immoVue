@@ -3,7 +3,6 @@
         <section class='section bg-light'>
             <div class="container">
                 <div class="row mx-auto pt-5">
-                    <div class="">
                         <div class="col-md-3">
                         <div class="tags ">
                             <div class="tags__heading text-center">
@@ -21,156 +20,184 @@
                             <Tags>
 
                             </Tags>
-                    </div>
+                         </div>
 
-                    <div class="col-md-9">
-                        <div class="item">
-                            <div class="container ">
-                                <div class="row">
-                                    <div class="item__heading">
-                                        <h2 class='text-left'>
-                                            Nom de la mmias
-                                        </h2>
+                        <div class="col-md-9">
+                            <div class="item">
+                                <div class="container ">
+                                    <div class="row">
+                                        <div class="item__heading">
+                                            <h2 class='text-left'>
+                                                Nom de la mmias
+                                            </h2>
 
-                                        <span class="price">
-                                            fcf
-                                        </span>
-                                    </div>
-
-                                    <div class="item__body">
-                                        <div class="item__body__img">
-                                            <img src="../assets/img/maison4.jpg" alt="">
-                                            <div class="status">
-                                                <i class="bi-bookmark-fill"></i>
-                                            </div>
+                                            <span class="price">
+                                                fcf
+                                            </span>
                                         </div>
 
-                                        <div class="item__body__images">
+                                        <div class="item__body">
+                                            <div class="item__body__img">
+                                                <img src="../assets/img/maison4.jpg" alt="">
+                                                <div class="status">
+                                                    <i class="bi-bookmark-fill"></i>
+                                                </div>
+                                            </div>
 
-                                                <div class="container">
-                                                    <div class="row">
+                                            <div class="item__body__images">
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-3">
+                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                        </div>
+
                                                         <div class="col-sm-6 col-md-3">
-                                                        <img src="../assets/img/maison3.jpg" alt="">
-                                                    </div>
+                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                        </div>
 
-                                                    <div class="col-sm-6 col-md-3">
-                                                        <img src="../assets/img/maison3.jpg" alt="">
-                                                    </div>
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                        </div>
 
-                                                    <div class="col-sm-6 col-md-3">
-                                                        <img src="../assets/img/maison3.jpg" alt="">
+                                                        <div class="col-sm-6 col-md-3">
+                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                        </div>
+                                                </div>
+                                                        </div>
                                                     </div>
+                                                    <hr>
 
-                                                    <div class="col-sm-6 col-md-3">
-                                                        <img src="../assets/img/maison3.jpg" alt="">
-                                                    </div>
+                                            <div class="item__body__text">
+                                                <h3>
+                                                    Description
+                                                </h3>
+                                                <p class="text text-grey text-left">
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quae
+                                                    doloribus
+                                                    similique
+                                                    consequatur excepturi laudantium alias totam,
+                                                    hic expedita dolorum ipsam fugiat est? Magni rerum qui animi voluptatem
+                                                    tenetur
+                                                    esse?
+                                                </p> <br>
+
+                                                <p class="text text-grey">
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quae
+                                                    doloribus
+                                                    similique
+                                                    consequatur excepturi laudantium alias totam.
+                                                </p>
                                             </div>
+
+                                            <hr>
+
+                                            <div class="item__body__more-infos">
+                                                <h3 class="" >
+                                                    Informations supplémentaires
+                                                </h3>
+
+                                                <div class="infos">
+                                                    <div class="info">
+                                                        <i class="fas fa-eye"></i> 103 vues
                                                     </div>
-                                                </div>
-                                                <hr>
 
-                                        <div class="item__body__text">
-                                            <h3>
-                                                Description
-                                            </h3>
-                                            <p class="text text-grey text-left">
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quae
-                                                doloribus
-                                                similique
-                                                consequatur excepturi laudantium alias totam,
-                                                hic expedita dolorum ipsam fugiat est? Magni rerum qui animi voluptatem
-                                                tenetur
-                                                esse?
-                                            </p> <br>
+                                                    <div class="info">
+                                                        <i class="fas fa-eye"></i> 103 vues
+                                                    </div>
 
-                                            <p class="text text-grey">
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quae
-                                                doloribus
-                                                similique
-                                                consequatur excepturi laudantium alias totam.
-                                            </p>
-                                        </div>
-
-                                        <hr>
-
-                                        <div class="item__body__more-infos">
-                                            <h3 class="" >
-                                                Informations supplémentaires
-                                            </h3>
-
-                                            <div class="infos">
-                                                <div class="info">
-                                                    <i class="fas fa-eye"></i> 103 vues
-                                                </div>
-
-                                                <div class="info">
-                                                    <i class="fas fa-eye"></i> 103 vues
-                                                </div>
-
-                                                <div class="info">
-                                                    <i class="fas fa-eye"></i> 103 vues
+                                                    <div class="info">
+                                                        <i class="fas fa-eye"></i> 103 vues
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <hr>
+                                            <hr>
 
-                                        <div class="item__body__share">
-                                            <p class="text text-black">
-                                                Partager cette annonce:
-                                            </p>
+                                            <div class="item__body__share">
+                                                <p class="text text-black">
+                                                    Partager cette annonce:
+                                                </p>
 
-                                            <div class="share-btns">
-                                                <div class="share-btn whatsapp">
-                                                    <i class="fab fa-whatsapp"></i>
-                                                </div>
+                                                <div class="share-btns">
+                                                    <div class="share-btn whatsapp">
+                                                        <i class="fab fa-whatsapp"></i>
+                                                    </div>
 
-                                                <div class="share-btn facebook">
-                                                    <i class="fab fa-facebook"></i>
-                                                </div>
+                                                    <div class="share-btn facebook">
+                                                        <i class="fab fa-facebook"></i>
+                                                    </div>
 
-                                                <div class="share-btn mail">
-                                                    <i class="fas fa-envelope"></i>
+                                                    <div class="share-btn mail">
+                                                        <i class="fas fa-envelope"></i>
+                                                    </div>
+
+                                                    <ul>
+                                                <li>
+                                                    <a target="_blank" title="Envoyer par mail" href="mailto:?Subject=Regarde ça c'est cool
+                                                    !&amp;Body=Dossier Servicom  !%20 https://servicomantilles.com/dossier.php?tk=12" rel="nofollow">
+                                                        <i class="fas fa-envelope mail"></i></a>
+                                                </li>
+
+                                                <li>
+                                                    <a href='whatsapp://send?text=Dossier Servicom:'>
+                                                        <i class="fab fa-whatsapp"></i>'>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <div class="fb-share-button" data-href="" data-layout="button_count">
+                                                    </div>
+                                                </li>
+
+                                                <li>
+
+                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://dossier.php?tk=target='blank' rel='noopener'">
+                                                        <i class=" fab fa-facebook"></i>
+                                                    </a>
+                                                </li>
+
+
+
+                                            </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
+                            <br>
 
-                        <hr>
+                            <hr>
 
-                        <div class="agent">
-                            <div class="agent__heading">
-                            <h3>
-                                Annonceur
-                            </h3>
-                            </div>
-                            <div class="agent__infos">
-                                <img src="../assets/img/maison4.jpg" alt="">
-                                <div class="agent__infos__list">
-                                    <h4>
-                                        Sarah
-                                    </h4>
+                            <div class="agent">
+                                <div class="agent__heading">
+                                <h3>
+                                    Annonceur
+                                </h3>
+                                </div>
+                                <div class="agent__infos">
+                                    <img src="../assets/img/maison4.jpg" alt="">
+                                    <div class="agent__infos__list">
+                                        <h4>
+                                            Sarah
+                                        </h4>
 
-                                    <div class="agent-contact">
-                                        <div class="share-btn whatsapp">
-                                                    <i class="fab fa-whatsapp"></i>
-                                                </div>
+                                        <div class="agent-contact">
+                                            <div class="share-btn whatsapp">
+                                                        <i class="fab fa-whatsapp"></i>
+                                                    </div>
 
 
-                                                <div class="share-btn phone">
-                                                    <i class="fas fa-phone"></i>
-                                                </div>
+                                                    <div class="share-btn phone">
+                                                        <i class="fas fa-phone"></i>
+                                                    </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -198,7 +225,7 @@ import Tags from './Tags.vue'
       },
       methods:{
         getItem() {
-            axios.get('http://127.0.0.1/immo/api/item/1').then(
+            axios.get('http://127.0.0.1/immo/api/item/').then(
                 response =>
                 this.details = response.data);
             }

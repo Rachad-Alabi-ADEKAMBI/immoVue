@@ -4,17 +4,18 @@
         <div class="row">
             <div class="col-sm-12 col-md-3">
                 <div class="menu">
-                    <button class="btn btn-grey mt-2" @click="getAds()">
-                        Annonces
+
+                    <a class="btn btn-white mt-2" @click="getAds()">
+                        <i class="bi-list-task"></i> Annonces
+                    </a>
+                    <button class="btn btn-white mt-2" @click='getUsers()'>
+                        <i class="bi bi-people-fill"></i> Utilisateurs
                     </button>
-                    <button class="btn btn-grey mt-2" @click='getUsers()'>
-                        Utilisateurs
+                    <button class="btn btn-white mt-2" >
+                        <i class="bi bi-envelope"></i>  Webmail
                     </button>
-                    <button class="btn btn-grey mt-2" >
-                        Webmail
-                    </button>
-                    <button class="btn btn-grey mt-2" @click='getSettings()'>
-                        Paramètres
+                    <button class="btn btn-white mt-2" @click='getSettings()'>
+                        <i class="bi bi-gear"></i> Paramètres
                     </button>
                 </div>
             </div>

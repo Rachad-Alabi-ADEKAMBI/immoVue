@@ -36,6 +36,17 @@ try {
 
                 break;
 
+            case 'myAds':
+                if (!empty($url[1])) {
+                    getMyAds($url[1]);
+                } else {
+                    throw new Exception(
+                        "Vous n'avez pas renseigné l'id de la demande"
+                    );
+                }
+
+                break;
+
             default:
                 throw new Exception("La demande n'est pas valide");
         }

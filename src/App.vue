@@ -31,12 +31,6 @@
                 </div>
             </li>
 
-            <li class="nav-item">
-                <router-link to="/contact" class="nav-link" >
-                     Contact
-                </router-link>
-            </li>
-
 
             <li class="nav-item">
                 <a class="nav-link" href="/dashboardAdmin">Tableau adm</a>
@@ -75,10 +69,10 @@
   </div>
 
   <footer class="footer bg-light mt-5">
-    <div class="container bg-light">
-        <div class="row pt-3">
+    <div class=" container bg-light">
+        <div class="row pt-3 text-left">
             <div class="col-sm-12 col-md-3">
-                <h3>CONTACTS</h3>
+                <h3 class="text-left">CONTACTS</h3>
 
                 <p>
                     <i class="fas fa-phone-volume"></i>
@@ -97,14 +91,14 @@
 
                 <p>
                     <a href="/appartments" class="">
-                        <i class="fas fa-arrow-right"></i> Appartements
+                        <i class="bi bi-building"></i> Appartements
                     </a>
                     <br>
                     <a href="/houses" class="">
-                        <i class="fas fa-arrow-right"></i> Maisons
+                        <i class="bi bi-house"></i> Maisons
                     </a> <br>
                     <a href="/lands" class="">
-                        <i class="fas fa-arrow-right"></i> Terrains
+                        <i class="bi bi-signpost"></i> Terrains
                     </a> <br>
 
                     <a href="/ads" class="">
@@ -115,7 +109,7 @@
             </div>
 
             <div class="col-sm-12 col-md-3">
-                <h3>LIENS UTILES</h3>
+                <h3 class="text-left">LIENS UTILES</h3>
 
                 <p>
                     <a href="./index.php#about" class="">
@@ -173,6 +167,7 @@
         </div>
     </div>
 </footer>
-
-
 </template>
+
+<script>
+</script>

@@ -1,53 +1,65 @@
 <template>
-   <div class="container" v-if='showAll'>
-        <div class="row text-center">
-            <div class="search mx-auto pt-2">
-                <label for="">Recherche par mot clé <br>
-                    <input type="text">
-                </label>
+    <div class="container"  v-if="showSearch">
+            <div class="row">
+                <div class="search-bar">
+                    <label for="">Recherche par mot clé  <i class="bi bi-x bold"
+                        @click="displayAll()"></i><br>
+                        <input type="text" v-model="searchKey">
+                    </label>
+                </div>
             </div>
+
         </div>
-        <div class="row" >
-            <div class="col-sm-12 col-md-10 mx-auto mt-3">
-                <div class="table-responsive-md">
-                    <h1 class="text-center">
-                        Liste des utilisateurs
-                    </h1>
-                    <table class="table table-bordered table-hover">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Image</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Annonces</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
+
+   <div class="container" v-if='showAll'>
+        <div class="row">
+                <div class="col-9">
+                            <h1 class="text-blue text-left">
+                                Liste des utilisateurs
+                            </h1>
+                    </div>
+
+                    <div class="col-3 text-left search-icon" @click="displaySearch()" v-if="showSearchBtn">
+                                <i class="bi bi-search"></i>
+                                <p class="text text-grey">Chercher</p>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-10">
+                    <div class="table-responsive-md">
+
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Annonces</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="user in users" :key="userid">
                                 <td data-label='Nom'>
-                                        user 1
+                                        {{ user.first_name }} {{ user.last_name }}
                                 </td>
 
                                 <td data-label='Id' scope="row">
-                                    <img src="/src/assets/img/profil.jpeg" alt="" class="table-img">
+                                    <img :src='getImgUrl(user.pic)'   alt="" class="table-img">
                                 </td>
-                                <td data-label='Action'>
-                                    ghjhjbjh
-                                </td>
-                                <td data-label='Prix'>
-                                    10 annonces
+                                <td data-label='ads'>
+                                 {{ user.ads }}
                                 </td>
                                 <td>
-                                    <i class="fas fa-eye" ></i>
-                                    <i class="fas fa-trash" @click='deleteUser()'></i>
+                                    <i class="fas fa-eye" @click='viewOnline(user.id)'></i>
+                                    <i class="fas fa-trash" @click='deleteAd(user.id)'></i>
                                 </td>
 
                             </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
 
     <div class="container" v-if="showDelete">
@@ -88,13 +100,22 @@
 </template>
 
 <script>
+import axios from "axios";
+
+
 export default {
       name: 'Users',
+      props: {
 
+      },
   data(){
         return{
             showAll : true,
         showDelete : false,
+        users: [],
+        searchKey: '',
+        showSearchBtn: true,
+        showSearch: false
         }
   },
   mounted: function(){
@@ -102,13 +123,24 @@ export default {
   },
   methods:{
     displayAll(){
+            axios.get('https://127.0.0.1/immo/api/users').then(
+                    response =>
+                    this.users = response.data);
         this.showAll = true;
-        this.showDelete = false
+        this.showDelete = false,
+        this.showSearch = false
+    },
+    getImgUrl(){
+
+    },
+    displaySearch(){
+        this.showSearch = true;
+        this.showAll = false;
     },
     deleteUser(){
         this.showAll = false;
         this.showDelete = true
     }
   }
-}
+  }
 </script>
