@@ -116,6 +116,10 @@ i {
   color: white;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 .dashboard {
   height: auto;
   min-height: 75vh;
@@ -563,6 +567,12 @@ span {
 
 /*responsive for 1023px*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
   .main .section .container .contact__item .contact-box img {
     width: 120px;
     height: 80px;
@@ -570,31 +580,37 @@ span {
 }
 /*responsive for 767px*/
 @media screen and (min-width: 350px) and (max-width: 767px) {
-  .main .content .section .blue {
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  main .content .section .blue {
     height: auto;
   }
-  .main .content .section .blue .container .boxes {
+  main .content .section .blue .container .boxes {
     flex-direction: column;
     height: auto;
   }
-  .main .content .section .container .contact__item .contact-box img {
+  main .content .section .container .contact__item .contact-box img {
     width: 120px;
     height: 80px;
   }
-  .main .content .section .container .hero {
+  main .content .section .container .hero {
     padding-bottom: 50px;
   }
-  .main .content .section .container .hero__search {
+  main .content .section .container .hero__search {
     height: auto;
     justify-content: space-between;
   }
-  .main .content .section .container .hero__search label {
+  main .content .section .container .hero__search label {
     margin: 10px auto;
   }
-  .main .content .section .container .blue .container .boxes__box {
+  main .content .section .container .blue .container .boxes__box {
     height: 400px;
   }
-  .main .content .slider {
+  main .content .slider {
     margin: 50px auto;
   }
 }/*# sourceMappingURL=main.css.map */

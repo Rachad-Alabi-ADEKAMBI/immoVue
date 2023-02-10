@@ -12,6 +12,7 @@ import AppartmentsView from '../views/AppartmentsView.vue'
 import CguView from '../views/CguView.vue'
 import ItemView from '../views/ItemView.vue'
 import TagView from '../views/TagView.vue'
+import LocationView from '../views/LocationView.vue'
 
 const routes = [
   {
@@ -116,9 +117,6 @@ const routes = [
   {
     path: '/tag',
     name: 'tag',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/TagView.vue')
   },
 
@@ -129,6 +127,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/ItemView.vue')
+  },
+  {
+    path: '/location',
+    name: 'location',
+    component: () => import(/* webpackChunkName: "about" */ '../views/LocationView.vue')
   }
 
 ]

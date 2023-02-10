@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-12 col-lg-3">
                 <div class="menu">
 
                     <a class="btn btn-white mt-2" @click="getAds()">
@@ -18,9 +18,48 @@
                         <i class="bi bi-gear"></i> Paramètres
                     </button>
                 </div>
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light mobile-menu" >
+
+                    <button class="navbar-toggler mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mr-0"
+                     id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-0">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="/ads" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Annonces
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="./index.php?action=appartments">Appartements</a>
+                                    <a class="dropdown-item" href="./index.php?action=houses">Maisons</a>
+                                    <a class="dropdown-item" href="./index.php?action=lands">Terrains</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/">Tout voir</a>
+                                </div>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboardAdmin">Tableau adm</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <router-link to="/dashboard" class="nav-link" >
+                                    Tableau user
+                                </router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
 
-            <div class="col-sm-12 col-md-9">
+            <div class="col-sm-12 col-md-12 col-lg-9">
                 <div class="dashboard">
                     <Ads v-if="showAds"></Ads>
               <Users v-if="showUsers"></Users>
@@ -29,6 +68,10 @@
             </div>
 
         </div>
+
+
+
+
 
     </div>
 </section>

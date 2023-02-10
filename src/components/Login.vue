@@ -5,21 +5,22 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 mx-auto mt-30 pt-10 bg-light mt-5 mb-5">
                 <div class="login">
-                    <form action='./api/api.php?action=login' method="POST">
+                    <form  @submit.prevent="submitForm"
+                    >
                         <h1 class="text-center">
                             Connexion
                         </h1>
                         <div class="form-group row">
                             <div class="col-sm-10 mx-auto"><br>
                                 <input type="text" class="form-control" id="" name='username'
-                                    placeholder="Email/Nom d'utilisateur" value=''>
+                                    placeholder="Email/Nom d'utilisateur" v-model="formData.username">
                             </div>
                         </div>
                         <br>
                         <div class="form-group row">
                             <div class="col-sm-10 mx-auto">
                                 <input type="password" class="form-control" id="" name='pass' placeholder="Mot de passe"
-                                    value=''>
+                                v-model="formData.pass">
                             </div>
                         </div>
                         <br>
@@ -28,7 +29,7 @@
                             <button type="submit" class="btn btn-primary mx-auto">
                                 Connexion
                             </button>
-                        </div>
+                        </div> <br>
 
                         <div class="row mb-4">
                             <div class="col-md-6 d-flex justify-content-center">
@@ -41,7 +42,7 @@
 
                             <div class="col-md-6 d-flex justify-content-center">
                                 <!-- Simple link -->
-                                <a href="./index.php?action=forgotPassword">Mot de passe oublié ?</a>
+                                <a href="/forgotPassword">Mot de passe oublié ?</a>
                             </div>
                         </div>
 
@@ -60,22 +61,32 @@
         </template>
 
 <script>
+import axios from "axios";
 
     export default {
         name: 'Login',
 
       data(){
         return{
-
+            formData: {
+        username: '',
+        pass: ''
+      }
         }
       },
       mounted: function(){
         //  this.getAds();
       },
       methods:{
-        getAds() {
-           // alert('ok');
-            }
+        async submitForm() {
+      try {
+        const response = await axios.post('http://127.0.0.1/immo/api/api.php?action=login', this.formData);
+        console.log(response.data);
+        location.replace('/dashboard')
+      } catch (error) {
+        console.error(error);
+      }
+    }
       }
     }
     </script>

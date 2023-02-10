@@ -12,13 +12,13 @@
         </div>
         <div class="container"  v-if='showAll'>
             <div class="row">
-                <div class="col-9">
+                <div class="col-sm-9">
                             <h1 class="text-blue text-left">
                                 Toutes les annonces
                             </h1>
                     </div>
 
-                    <div class="col-3 text-left search-icon" @click="displaySearch()" v-if="showSearchBtn">
+                    <div class="col-sm-3 text-left search-icon" @click="displaySearch()" v-if="showSearchBtn">
                                 <i class="bi bi-search"></i>
                                 <p class="text text-grey">Chercher</p>
                     </div>

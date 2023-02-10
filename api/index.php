@@ -46,6 +46,16 @@ try {
                 }
 
                 break;
+            case 'adsByLocation':
+                if (!empty($url[1])) {
+                    getAdsByLocation($url[1]);
+                } else {
+                    throw new Exception(
+                        "Vous n'avez pas renseigné l'id de la demande"
+                    );
+                }
+
+                break;
 
             default:
                 throw new Exception("La demande n'est pas valide");

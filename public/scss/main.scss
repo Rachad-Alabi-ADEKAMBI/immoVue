@@ -162,6 +162,11 @@ i{
 
 }
 
+.mobile-menu{
+    display: none;
+}
+
+
 .dashboard{
     height: auto;
     min-height: 75vh;
@@ -656,6 +661,13 @@ span{
 
 /*responsive for 1023px*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
+    .menu{
+        display: none;
+    }
+
+    .mobile-menu{
+        display: block;
+    }
     .main{
         .section{
             .container{
@@ -679,7 +691,14 @@ span{
 
 /*responsive for 767px*/
 @media screen and (min-width: 350px) and (max-width: 767px) {
-    .main{
+    .menu{
+        display: none;
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+    main{
        .content{
         .section{
             .blue{
@@ -729,6 +748,7 @@ span{
                         }
                     }
                 }
+
             }
         }
 

@@ -1092,16 +1092,10 @@ function login()
             }
 
             if (!empty($errors)) {
-                $_SESSION['login'] = [
-                    'username' => verifyInput($_POST['username']),
-                    'pass' => verifyInput($_POST['pass']),
-                ]; ?>
-
-<script>
-alert('Veuillez verifier vos identifiants');
-window.location.replace('../index.php?action=login')
-</script>
-<?php
+                $response = [
+                    'success' => false,
+                    'message' => 'Identifiant ou mot de passe incorrect',
+                ];
             }
 
             if (empty($errors)) {
@@ -1114,8 +1108,19 @@ window.location.replace('../index.php?action=login')
                     'id' => $user['id'],
                     'role' => $user['role'],
                 ];
-                header('Location: ../index.php?action=dashboard');
+
+                $response = [
+                    'success' => true,
+                    'message' => 'Connexion réussie',
+                    'role' => $user['role'],
+                ];
             }
+
+            header('Content-Type: application/json');
+            header('Access-Control-Allow-Origin: *');
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            //  echo json_encode($response);
+            exit();
         }
     }
 }
@@ -1172,6 +1177,18 @@ function getAd($id)
      ORDER BY id DESC");
     $req->execute([$id]);
     $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getAdsByLocation($location)
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    ads WHERE location = ?
+     ORDER BY id DESC");
+    $req->execute([$location]);
+    $datas = $req->fetch();
     $req->closeCursor();
     sendJSON($datas);
 }

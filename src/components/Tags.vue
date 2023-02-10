@@ -46,7 +46,7 @@
 
                     <div class="tags__body text-center">
                         <div class="tag">
-                            <router-link to="/tag" >
+                            <router-link to="/location?location=Cotonou" >
                                 <i class="bi bi-arrow-right"></i>Bohicon
                              </router-link>
                         </div>
