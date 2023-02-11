@@ -72,7 +72,7 @@
                                 </td>
                                 <td>
                                     <i class="fas fa-eye" @click='viewOnline(ad.id)'></i>
-                                    <i class="fas fa-pen" @click='editAd()'></i>
+                                    <i class="fas fa-pen" @click='editAd(ad.id)'></i>
                                     <i class="fas fa-trash" @click='deleteAd(ad.id)'></i>
                                 </td>
 
@@ -262,8 +262,8 @@ deleteAd(){
     this.showDelete = true;
     this.showEdit = false;
 },
-editAd(){
-    axios.get('https://127.0.0.1/immo/api/item/25').then(
+editAd(id){
+    axios.get('http://127.0.0.1/immo/api/item/25').then(
                 response =>
                 this.details = response.data);
     this.showAll = false;
@@ -286,6 +286,9 @@ format(num){
                         }
                          date_formated = addDaysToDate(date, 0);
                          return date_formated.toLocaleDateString('fr');
+        },
+        viewOnline(id){
+            this.$router.push('/item/'+id);
         }
   }
 

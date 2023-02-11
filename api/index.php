@@ -46,6 +46,18 @@ try {
                 }
 
                 break;
+
+            case 'user':
+                if (!empty($url[1])) {
+                    getUser($url[1]);
+                } else {
+                    throw new Exception(
+                        "Vous n'avez pas renseigné l'id de la demande"
+                    );
+                }
+
+                break;
+
             case 'adsByLocation':
                 if (!empty($url[1])) {
                     getAdsByLocation($url[1]);

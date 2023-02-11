@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header(
+    'Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept'
+);
+
 function getConnexion()
 {
     return new PDO(
@@ -9,16 +15,6 @@ function getConnexion()
         ''
     );
 }
-
-/*
-function getConnexion()
-{
-    return new PDO(
-        'mysql:host=localhost; dbname=adra7128_immobilierbenin; charset=UTF8',
-        'adra7128_immo',
-        'hjhkbhb#55@hjYGHI'
-    );
-}*/
 
 $error = ['error' => false];
 $action = '';

@@ -39,9 +39,7 @@
                                         <div class="item__body">
                                             <div class="item__body__img">
                                                 <img src="../assets/img/maison4.jpg" alt="">
-                                                <div class="status">
-                                                    <i class="bi-bookmark-fill"></i>
-                                                </div>
+
                                             </div>
 
                                             <div class="item__body__images">
@@ -73,6 +71,9 @@
                                                     Description
                                                 </h3>
                                                 <p class="text text-grey text-left">
+                                                    <i class="bi-bookmark-fill"></i> En vente <br> <br>
+
+
                                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quae
                                                     doloribus
                                                     similique
@@ -99,15 +100,11 @@
 
                                                 <div class="infos">
                                                     <div class="info">
-                                                        <i class="fas fa-eye"></i> 103 vues
+                                                        <i class="bi bi-eye"></i> 103 vues
                                                     </div>
 
                                                     <div class="info">
-                                                        <i class="fas fa-eye"></i> 103 vues
-                                                    </div>
-
-                                                    <div class="info">
-                                                        <i class="fas fa-eye"></i> 103 vues
+                                                        <i class="bi bi-share"></i> 52 partages
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,35 +128,6 @@
                                                     <div class="share-btn mail">
                                                         <i class="fas fa-envelope"></i>
                                                     </div>
-
-                                                    <ul>
-                                                <li>
-                                                    <a target="_blank" title="Envoyer par mail" href="mailto:?Subject=Regarde ça c'est cool
-                                                    !&amp;Body=Dossier Servicom  !%20 https://servicomantilles.com/dossier.php?tk=12" rel="nofollow">
-                                                        <i class="fas fa-envelope mail"></i></a>
-                                                </li>
-
-                                                <li>
-                                                    <a href='whatsapp://send?text=Dossier Servicom:'>
-                                                        <i class="fab fa-whatsapp"></i>'>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <div class="fb-share-button" data-href="" data-layout="button_count">
-                                                    </div>
-                                                </li>
-
-                                                <li>
-
-                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://dossier.php?tk=target='blank' rel='noopener'">
-                                                        <i class=" fab fa-facebook"></i>
-                                                    </a>
-                                                </li>
-
-
-
-                                            </ul>
                                                 </div>
                                             </div>
                                         </div>

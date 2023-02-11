@@ -81,8 +81,7 @@ import axios from "axios";
         async submitForm() {
       try {
         const response = await axios.post('http://127.0.0.1/immo/api/api.php?action=login', this.formData);
-        console.log(response.data);
-        location.replace('/dashboard')
+        console.log(response.data.message);
       } catch (error) {
         console.error(error);
       }

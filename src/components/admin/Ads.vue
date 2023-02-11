@@ -102,6 +102,12 @@
            </div>
         </div>
         </div>
+
+        <div class="container">
+            <div class="row" v-for="detail in details" :key="detail.id">
+                {{ detail.id }}
+            </div>
+        </div>
 </template>
 
 <script>

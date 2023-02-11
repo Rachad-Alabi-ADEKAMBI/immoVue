@@ -5,10 +5,10 @@
        <div class="container">
 
             <div class="row mx-auto pt-5">
-                <Tags class="col-sm-12 col-md-3">
+                <Tags class="col-sm-12 col-md-12 col-lg-3">
                 </Tags>
 
-                <div class="col-sm-12 col-md-9">
+                <div class="col-sm-12 col-md-12 col-lg-9">
                     <div class="list">
                         <div class="container ">
                             <div class="row">

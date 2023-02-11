@@ -381,10 +381,10 @@ span{
                         border: 1px solid  $border;
 
                         &__img{
+                            overflow: hidden;
                             img{
-                                width: 320px;
-                                height: 200px;
-
+                                width: 275px;
+                                height: 180px;
                             }
 
                             p{
@@ -422,7 +422,7 @@ span{
                                     font-size: 1.2em;
                                 }
                             .icons{
-                                width: 400px;
+                                width: auto;
                                 @include flex();
                                 justify-content: start;
 
@@ -659,8 +659,8 @@ span{
 }
 
 
-/*responsive for 1023px*/
-@media screen and (min-width: 768px) and (max-width: 1280px) {
+/*responsive for 768px*/
+@media screen and (min-width: 350px) and (max-width: 1024px) {
     .menu{
         display: none;
     }
@@ -668,6 +668,8 @@ span{
     .mobile-menu{
         display: block;
     }
+
+
     .main{
         .section{
             .container{
@@ -682,6 +684,14 @@ span{
                     }
                 }
 
+                .row{
+                    .list{
+                        .box{
+                            flex-direction: column;
+                        }
+                    }
+                }
+
 
 
             }
@@ -689,7 +699,7 @@ span{
     }
 }
 
-/*responsive for 767px*/
+/*responsive for 767px*//*
 @media screen and (min-width: 350px) and (max-width: 767px) {
     .menu{
         display: none;
@@ -758,3 +768,4 @@ span{
        }
     }
 }
+*/

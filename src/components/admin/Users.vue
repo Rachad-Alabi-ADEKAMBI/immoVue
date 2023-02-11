@@ -80,20 +80,28 @@
                             </div>
                         </div> <br>
 
-               <div class="buttons">
-                    <label for="">
+               <div class="buttons mx-auto">
+                    <label for="" class="m-2">
                         <button class="btn btn-green">
                             Oui
                         </button>
                     </label>
 
-                    <label for="">
+                    <label for="" class="m-2">
                         <button class="btn btn-red" @click="displayAll()">
                             Non
                         </button>
                     </label>
                </div>
             </form>
+           </div>
+        </div>
+    </div>
+
+    <div class="container" v-if="showEdit">
+        <div class="row" v-for="detail in details" :key="detail.id">
+           <div class="col-sm-12 col-md-6 mx-auto">
+                {{ detail.id }}
            </div>
         </div>
     </div>
@@ -115,6 +123,8 @@ export default {
         users: [],
         searchKey: '',
         showSearchBtn: true,
+        showEdit: false,
+        id: 2,
         showSearch: false
         }
   },
@@ -139,7 +149,11 @@ export default {
     },
     deleteUser(){
         this.showAll = false;
-        this.showDelete = true
+        this.showDelete = true;
+        this.showEdit = false;
+    },
+    viewOnline($id){
+        this.$router.push('/');
     }
   }
   }
