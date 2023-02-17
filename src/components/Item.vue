@@ -1,6 +1,7 @@
-d<template>
+<template>
     <div class="content">
-        <section class='section bg-light'>
+        <section class='section bg-light' v-for="detail in details"
+                                            :key="detail.id">
             <div class="container">
                 <div class="row mx-auto pt-5">
                         <div class="col-md-3">
@@ -24,22 +25,21 @@ d<template>
 
                         <div class="col-md-9">
                             <div class="item">
-                                <div class="container ">
+                                <div class="container">
                                     <div class="row">
                                         <div class="item__heading">
                                             <h2 class='text-left'>
-                                                Nom de la mmias
+                                               {{detail.name}}
                                             </h2>
 
                                             <span class="price">
-                                                fcf
+                                                {{ format(detail.price)}} XOF
                                             </span>
                                         </div>
 
                                         <div class="item__body">
                                             <div class="item__body__img">
-                                                <img src="../assets/img/maison4.jpg" alt="">
-
+                                                <img src="../assets/img/maison2.jpg" alt="">
                                             </div>
 
                                             <div class="item__body__images">
@@ -47,7 +47,7 @@ d<template>
                                                     <div class="container">
                                                         <div class="row">
                                                             <div class="col-sm-6 col-md-3">
-                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                            <img src="../assets/img/maison2.jpg" alt="">
                                                         </div>
 
                                                         <div class="col-sm-6 col-md-3">
@@ -55,7 +55,7 @@ d<template>
                                                         </div>
 
                                                         <div class="col-sm-6 col-md-3">
-                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                            <img src="../assets/img/maison4.jpg" alt="">
                                                         </div>
 
                                                         <div class="col-sm-6 col-md-3">
@@ -73,21 +73,11 @@ d<template>
                                                 <p class="text text-grey text-left">
                                                     <i class="bi-bookmark-fill"></i> En vente <br> <br>
 
-
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quae
-                                                    doloribus
-                                                    similique
-                                                    consequatur excepturi laudantium alias totam,
-                                                    hic expedita dolorum ipsam fugiat est? Magni rerum qui animi voluptatem
-                                                    tenetur
-                                                    esse?
+                                                        {{ detail.description}}
                                                 </p> <br>
 
                                                 <p class="text text-grey">
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe quae
-                                                    doloribus
-                                                    similique
-                                                    consequatur excepturi laudantium alias totam.
+                                                  {{ detail.more_description}}
                                                 </p>
                                             </div>
 
@@ -100,11 +90,11 @@ d<template>
 
                                                 <div class="infos">
                                                     <div class="info">
-                                                        <i class="bi bi-eye"></i> 103 vues
+                                                        <i class="bi bi-eye"></i> 103 {{ detail.view}}
                                                     </div>
 
                                                     <div class="info">
-                                                        <i class="bi bi-share"></i> 52 partages
+                                                        <i class="bi bi-share"></i> 52 {{ detail.share}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,19 +175,31 @@ import Tags from './Tags.vue'
       data(){
         return{
             details:[],
-            parentMessage: 'Hello from the parent component!'
+            parentMessage: 'Hello from the parent component!',
+            adId: ''
         }
       },
+      created() {
+    this.adId = this.$route.params.id;
+    // You can use the userId value to fetch data for the specific user
+  },
       mounted: function(){
           this.getItem();
       },
       methods:{
         getItem() {
-            axios.get('http://127.0.0.1/immo/api/item/').then(
-                response =>
-                this.details = response.data);
-            }
-      }
+            axios.get('http://127.0.0.1/immo/api/item/34')
+  .then(response => (this.details = response.data))
+  .catch(error => console.log(error))
+            },
+            format(num){
+    let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);
+    return res;
+},
+    getImgUrl(pic) {
+    return "http://127.0.0.1/immo/src/assets/img/" + pic;
+},
+        }
     }
     </script>
 

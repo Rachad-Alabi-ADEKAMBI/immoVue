@@ -34,27 +34,27 @@
 
             <div class="icon">
                 <i class="bi-egg-fried"></i>
-                1 cuisine
+                {{ detail.kitchens }} cuisine
             </div>
 
             <div class="icon">
                 <i class="bi bi-tv"></i>
-                1 salon
+                {{detail.living_rooms  }} salon
             </div>
 
             <div class="icon">
                 <i class="fas fa-warehouse"></i>
-                1 magasin
+                {{detail.living_rooms  }} magasins
             </div>
 
             <div class="icon">
                 <i class="fas fa-layer-group"></i>
-                500 m2
+                {{detail.area  }} m2
             </div>
         </div>
 
         <button class="btn btn-primary">
-            <a href="/item">
+            <a v-bind:href="'/item?id='+ detail.id">
                 Voir
             </a>
         </button>

@@ -20,7 +20,7 @@
                         <div class="form-group row">
                             <div class="col-sm-10 mx-auto">
                                 <input type="password" class="form-control" id="" name='pass' placeholder="Mot de passe"
-                                v-model="formData.pass">
+                                v-model="formData.password">
                             </div>
                         </div>
                         <br>
@@ -69,8 +69,8 @@ import axios from "axios";
       data(){
         return{
             formData: {
-        username: '',
-        pass: ''
+        username: 'codeur',
+        password: 'idem'
       }
         }
       },
@@ -78,14 +78,29 @@ import axios from "axios";
         //  this.getAds();
       },
       methods:{
-        async submitForm() {
-      try {
-        const response = await axios.post('http://127.0.0.1/immo/api/api.php?action=login', this.formData);
-        console.log(response.data.message);
-      } catch (error) {
-        console.error(error);
+        submitForm() {
+    axios.post('http://127.0.0.1/immo/api/api.php?action=login', {
+      username: this.username,
+      password: this.password
+    })
+    .then(response => {
+      if (response.data.success) {
+        // Connexion réussie, rediriger l'utilisateur en fonction de son rôle
+        if (response.data.role === 'admin') {
+          this.$router.push('/admin');
+        } else {
+          this.$router.push('/dashboard');
+        }
+      } else {
+        // Afficher un message d'erreur si la connexion a échoué
+       alert('erreur')
       }
-    }
-      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+}
+
     }
     </script>

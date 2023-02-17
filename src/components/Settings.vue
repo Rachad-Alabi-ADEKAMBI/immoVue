@@ -9,7 +9,7 @@
             </div>
         <div class="row">
             <form class="needs-validation p-2 bg-light"
-            action='./api/api.php?action=parameters' enctype="multipart/form-data"
+            action='http://127.0.0.1/immo/api/api.php?action=parameters' enctype="multipart/form-data"
             method='POST'>
 
             <div class="form-row">

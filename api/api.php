@@ -661,7 +661,7 @@ function parameters()
                 if ($datas) { ?>
 <script>
 alert("Ce nom d'utilisateur est déjà pris");
-window.location.replace("../parametres.php");
+//window.location.replace("../parametres.php");
 exit();
 </script>
 

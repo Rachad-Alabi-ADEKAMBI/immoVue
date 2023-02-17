@@ -170,4 +170,33 @@
 </template>
 
 <script>
+
+export default {
+  name: '',
+props: {
+
+
+},
+data(){
+return{
+    logged: 'yes'
+}
+},
+mounted: function(){
+    //this.displayAll();
+},
+methods: {
+displayAll(id){
+        axios.get('https://127.0.0.1/immo/api/myAds/2').then(
+                response =>
+                this.ads = response.data);
+this.showAll = true;
+this.showDelete = false;
+this.showEdit = false;
+},
+  }
+
+
+}
+
 </script>
