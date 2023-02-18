@@ -176,19 +176,20 @@ import Tags from './Tags.vue'
         return{
             details:[],
             parentMessage: 'Hello from the parent component!',
-            adId: ''
+            adId: '',
+            id: 36
         }
       },
       created() {
-    this.adId = this.$route.params.id;
+  //  this.adId = this.$route.params.id;
     // You can use the userId value to fetch data for the specific user
   },
       mounted: function(){
           this.getItem();
       },
       methods:{
-        getItem() {
-            axios.get('http://127.0.0.1/immo/api/item/34')
+        getItem(id) {
+            axios.get('https://127.0.0.1/immo/api/item/' +id)
   .then(response => (this.details = response.data))
   .catch(error => console.log(error))
             },
