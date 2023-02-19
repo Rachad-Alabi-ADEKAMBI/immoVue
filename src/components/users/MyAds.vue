@@ -49,9 +49,9 @@
                     <table class="table table-bordered">
                         <thead class="thead-light">
                             <tr>
+                                <th scope="col">#</th>
                                 <th scope="col">Nom</th>
                                 <th scope="col">Image</th>
-                                <th scope="col">Date</th>
                                 <th scope="col">Prix</th>
                             </tr>
                         </thead>
@@ -60,15 +60,15 @@
                                 <td data-label='Nom'>
                                         {{ ad.id }}
                                 </td>
+                                <td data-label='Nom'>
+                                        {{ ad.name }}
+                                </td>
 
                                 <td data-label='Id' scope="row">
                                     <img :src='getImgUrl(ad.pic1)'   alt="" class="table-img">
                                 </td>
-                                <td data-label='Action'>
-                                    {{ ad.id }}
-                                </td>
                                 <td data-label='Prix'>
-                                 {{ ad.price }} F CFA
+                                 {{ format(ad.price) }} XOF
                                 </td>
                                 <td>
                                     <i class="fas fa-eye" @click='viewOnline(ad.id)'></i>
@@ -236,8 +236,8 @@ computed: {
             }
         },
 methods: {
-displayAll(id){
-        axios.get('https://127.0.0.1/immo/api/myAds/2').then(
+displayAll(){
+        axios.get('https://127.0.0.1/immo/api/myAds').then(
                 response =>
                 this.ads = response.data);
 this.showAll = true;
@@ -275,8 +275,8 @@ format(num){
             return res;
     },
     getImgUrl(pic) {
-                return "/./src/assets/img/" + pic;
-            },
+    return "http://127.0.0.1/immo/src/assets/img/" + pic;
+},
 
     convert(date){
                     function addDaysToDate(date, days){

@@ -33,12 +33,12 @@
                 Annonces
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="./index.php?action=appartments">Appartements</a>
-                <a class="dropdown-item" href="./index.php?action=houses">Maisons</a>
-                <a class="dropdown-item" href="./index.php?action=lands">Terrains</a>
+                <a class="dropdown-item" href="/appartments">Appartements</a>
+                <a class="dropdown-item" href="/houses">Maisons</a>
+                <a class="dropdown-item" href="/lands">Terrains</a>
 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/">Tout voir</a>
+                <a class="dropdown-item" href="/ads">Tout voir</a>
             </div>
         </li>
 

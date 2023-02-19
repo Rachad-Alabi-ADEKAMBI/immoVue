@@ -19,7 +19,6 @@
                              <div :message="parentMessage" v-for='ad in ads' :key="id">
                                     <Box  :id="ad.id"></Box>
                                 </div>
-
                                <hr>
                            </div>
                          </div>
@@ -48,19 +47,31 @@
    },
        data(){
          return{
-                 ads: [],
-                 location: 'Cotonou'
+                 ads: []
          }
        },
+       computed: {
+    location() {
+      return this.$route.query.location;
+    },
+  },
        mounted: function(){
            this.getAds();
        },
        methods:{
-         getAds(location) {
-            axios.get('http://127.0.0.1/immo/api/adsByLocation/'+location).then(
+        getAds() {
+           axios.get(`http://127.0.0.1/immo/api/location/${this.location}`).then(
                 response =>
                 this.ads = response.data);
-             }
-       }
+            },
+
+       format(num){
+    let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);
+    return res;
+       },
+       getImgUrl(pic) {
+    return "http://127.0.0.1/immo/src/assets/img/" + pic;
+}
      }
+    }
      </script>

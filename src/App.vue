@@ -2,7 +2,7 @@
 
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><img src="./assets//img/logo-immo.png" alt=""></a>
+    <a class="navbar-brand" href="/"><img src="./assets/img/logo-transparent.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,18 +48,18 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>  -->
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <div class="form-inline my-2 my-lg-0">
 
-            <button class="btn my-2 " type="submit">
-                <router-link to="/login" >Login     </router-link>
+            <button class="btn btn-primary my-2 " type="submit">
+                <router-link to="/login" >Connexion     </router-link>
             </button>
 
-            <button class="btn btn-outline-success m-2" type="submit">
-                <a href="./api/api.php?action=logout">
+            <button class="btn btn-danger m-2" type="submit">
+                <a href="http://127.0.0.1/immo/api/api.php?action=logout">
                     Déconnexion
                 </a>
             </button>
-        </form>
+        </div>
     </div>
 </nav>
 </div>
@@ -71,22 +71,16 @@
   <footer class="footer bg-light mt-5">
     <div class=" container bg-light">
         <div class="row pt-3 text-left">
-            <div class="col-sm-12 col-md-3">
-                <h3 class="text-left">CONTACTS</h3>
+            <div class="col-sm-12 col-md-4">
+                <img src="./assets/img/logo-transparent.png" alt=""> <br>
 
                 <p>
-                    <i class="fas fa-phone-volume"></i>
-                    55 00 00 00
-                    <br>
-                    <i class="fab fa-whatsapp"></i>
-                    55 00 00 00
-                    <br>
                     <i class="fas fa-envelope"></i>
                     contact@immobilierbenin.com
                 </p>
             </div>
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-4">
                 <h3>CATEGORIES</h3>
 
                 <p>
@@ -108,7 +102,7 @@
                 </p>
             </div>
 
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-4">
                 <h3 class="text-left">LIENS UTILES</h3>
 
                 <p>
@@ -123,27 +117,6 @@
                     </a>
 
                 </p>
-            </div>
-
-            <div class="col-sm-12 col-md-3">
-                <h3 class="text-left">
-                    Newsletters
-                </h3>
-                <div class="row">
-                    <form action="index.php?action=registerToNewsletters" method="POST">
-                        <div class="col-6">
-                            <label for=""></label>
-                            <input type="email" name='email' required>
-                        </div>
-
-                        <div class="col-6">
-                            <label for=""></label><br>
-                            <button class='btn btn-primary' type="submit">
-                                M'abonner
-                            </button>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
 

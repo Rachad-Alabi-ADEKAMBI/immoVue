@@ -1,6 +1,7 @@
 <template>
     <div class="content">
-        <section class='section bg-light' v-for="detail in details"
+        <div class="" v-if="details.length != 0">
+            <section class='section bg-light' v-for="detail in details"
                                             :key="detail.id">
             <div class="container">
                 <div class="row mx-auto pt-5">
@@ -24,7 +25,7 @@
                          </div>
 
                         <div class="col-md-9">
-                            <div class="item">
+                                <div class="item">
                                 <div class="container">
                                     <div class="row">
                                         <div class="item__heading">
@@ -39,7 +40,7 @@
 
                                         <div class="item__body">
                                             <div class="item__body__img">
-                                                <img src="../assets/img/maison2.jpg" alt="">
+                                                <img :src='getImgUrl(detail.pic1)'>
                                             </div>
 
                                             <div class="item__body__images">
@@ -47,19 +48,19 @@
                                                     <div class="container">
                                                         <div class="row">
                                                             <div class="col-sm-6 col-md-3">
-                                                            <img src="../assets/img/maison2.jpg" alt="">
+                                                                <img :src='getImgUrl(detail.pic1)' class="pic">
                                                         </div>
 
                                                         <div class="col-sm-6 col-md-3">
-                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                            <img :src='getImgUrl(detail.pic3)' class="pic">
                                                         </div>
 
                                                         <div class="col-sm-6 col-md-3">
-                                                            <img src="../assets/img/maison4.jpg" alt="">
+                                                             <img :src='getImgUrl(detail.pic4)' class="pic">
                                                         </div>
 
                                                         <div class="col-sm-6 col-md-3">
-                                                            <img src="../assets/img/maison3.jpg" alt="">
+                                                            <img :src='getImgUrl(detail.pic5)' class="pic">
                                                         </div>
                                                 </div>
                                                         </div>
@@ -158,7 +159,16 @@
                         </div>
                 </div>
             </div>
-        </section>
+          </section>
+        </div>
+
+        <div v-if="details.length == 0">
+            <section>
+                <p class="text text-center">
+                    Veuillez vérfifier votre demande
+                </p>
+            </section>
+        </div>
     </div>
 </template>
 
@@ -175,21 +185,21 @@ import Tags from './Tags.vue'
       data(){
         return{
             details:[],
-            parentMessage: 'Hello from the parent component!',
-            adId: '',
-            id: 36
+            parentMessage: 'Hello from the parent component!'
+           // id: ''
         }
       },
-      created() {
-  //  this.adId = this.$route.params.id;
-    // You can use the userId value to fetch data for the specific user
+      computed: {
+    id() {
+      return this.$route.query.id;
+    }
   },
       mounted: function(){
           this.getItem();
       },
       methods:{
-        getItem(id) {
-            axios.get('https://127.0.0.1/immo/api/item/' +id)
+        getItem() {
+            axios.get(`http://127.0.0.1/immo/api/item/${this.id}`)
   .then(response => (this.details = response.data))
   .catch(error => console.log(error))
             },

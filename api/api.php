@@ -237,12 +237,12 @@ function search()
     }
 */
 
-function getMyAds($id)
+function getMyAds()
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT *  FROM ads
     WHERE seller_id = ? ORDER BY id DESC");
-    $req->execute([$id]);
+    $req->execute([$_SESSION['user']['id']]);
     $datas = $req->fetchAll(PDO::FETCH_ASSOC);
     $req->closeCursor();
     sendJSON($datas);
@@ -1184,7 +1184,7 @@ function getAdsByLocation($location)
     ads WHERE location = ?
      ORDER BY id DESC");
     $req->execute([$location]);
-    $datas = $req->fetch();
+    $datas = $req->fetchAll();
     $req->closeCursor();
     sendJSON($datas);
 }
@@ -1216,7 +1216,7 @@ function logout()
 {
     unset($_SESSION['user']);
 
-    header('Location: ../index.php');
+    header('Location: http://127.0.0.1:8080/');
 }
 
 if ($action == 'login') {

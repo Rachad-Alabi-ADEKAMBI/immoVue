@@ -25,20 +25,13 @@ try {
                 getLands();
                 break;
 
+            case 'myAds':
+                getMyAds();
+                break;
+
             case 'item':
                 if (!empty($url[1])) {
                     getAd($url[1]);
-                } else {
-                    throw new Exception(
-                        "Vous n'avez pas renseigné l'id de la demande"
-                    );
-                }
-
-                break;
-
-            case 'myAds':
-                if (!empty($url[1])) {
-                    getMyAds($url[1]);
                 } else {
                     throw new Exception(
                         "Vous n'avez pas renseigné l'id de la demande"
@@ -58,7 +51,7 @@ try {
 
                 break;
 
-            case 'adsByLocation':
+            case 'location':
                 if (!empty($url[1])) {
                     getAdsByLocation($url[1]);
                 } else {
