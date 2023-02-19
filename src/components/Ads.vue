@@ -11,15 +11,15 @@
                         <div class="container">
                           <div class="row">
                             <div class="list__heading">
-                              <h1>
-                                Derniers ajouts
-                              </h1>
+                              <h2 class="span text-center subtitle">
+                                TOUTES LES ANNONCES
+                              </h2>
                             </div>
 
-                            <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
-                              <hr>
+                            <div  v-for='ad in ads' :key="id">
+                                    <Box  :id="ad.id"></Box>
+                                </div>
+                            <hr>
                           </div>
                         </div>
                       </div>
@@ -33,6 +33,8 @@
 
 
 <script>
+import axios from "axios";
+
 import Box from './Box.vue'
 import Tags from './Tags.vue'
 
@@ -42,18 +44,23 @@ import Tags from './Tags.vue'
     Box,
     Tags
   },
+
       data(){
         return{
-                ads: []
+            ads:[],
+            parentMessage: 'Hello from the parent component!'
         }
       },
       mounted: function(){
-        //  this.getAds();
+          this.getAds();
       },
       methods:{
         getAds() {
-           // alert('ok');
+           axios.get('http://127.0.0.1/immo/api/ads').then(
+                response =>
+                this.ads = response.data);
             }
+
       }
     }
     </script>

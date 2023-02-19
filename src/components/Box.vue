@@ -1,13 +1,13 @@
 <template>
     <div class="col-12 box" v-for="detail in details" :key="detail.id">
     <div class="box__img">
-        <img src="../assets/img/maison4.jpg" alt="">
+        <img :src='getImgUrl(detail.pic1)'>
         <p class="text text-grey"><span><i class="bi bi-tag"></i>Etat:</span> En vente</p>
     </div>
 
     <div class="box__infos" >
         <h2>
-            {{ detail.name }}
+           {{ detail.name }}
         </h2>
 
         <span>
@@ -18,7 +18,7 @@
                 </span><br>
 
         <strong class="price">
-            {{  detail.price }}fcfa
+            {{  format(detail.price) }} XOF
         </strong>
 
         <div class="icons">
@@ -71,14 +71,12 @@ import axios from "axios";
 export default {
       name: 'Box',
   props: {
-    message: '',
+    parentMessage: '',
     id: ''
   },
   data(){
     return{
-        details: [],
-        idd: this.id,
-        c: 35
+        details: []
     }
   },
   mounted: function(){
@@ -86,11 +84,17 @@ export default {
   },
   methods:{
     getDetails(c){
-        axios.get('http://127.0.0.1/immo/api/item/36').then(
-                response =>
-                this.details = response.data);
-             //   alert(id);
-            }
+            axios.get(`http://127.0.0.1/immo/api/item/${this.id}`)
+  .then(response => (this.details = response.data))
+  .catch(error => console.log(error))
+            },
+            format(num){
+    let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);
+    return res;
+},
+            getImgUrl(pic) {
+    return "http://127.0.0.1/immo/src/assets/img/" + pic;
+}
 
 
     }

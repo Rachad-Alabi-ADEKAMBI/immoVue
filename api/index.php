@@ -9,6 +9,10 @@ try {
                 getUsers();
                 break;
 
+            case 'threeAds':
+                getThreeAds();
+                break;
+
             case 'ads':
                 getAds();
                 break;

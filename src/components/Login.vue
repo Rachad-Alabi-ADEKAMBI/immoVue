@@ -49,7 +49,7 @@
                         <!-- Register buttons -->
                         <div class="text-center ">
                             <p class="text-center mx-auto">Pas encore de compte ? <a
-                                    href="./index.php?action=register">Inscription</a></p>
+                                    href="/register">Inscription</a></p>
                         </div>
                     </form>
                 </div>

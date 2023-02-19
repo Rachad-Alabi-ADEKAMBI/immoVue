@@ -13,36 +13,32 @@
                         <div class="container ">
                             <div class="row">
                                 <div class="list__heading">
-                                    <p class='span text-center'>
-                                        Derniers ajouts
-                                    </p>
+                                    <h2 class='span text-center subtitle'>
+                                        DERNIERS AJOUTS
+                                    </h2>
                                 </div>
 
-                                <div :message="parentMessage" v-for='ad in ads' :key="id">
+                                <div  v-for='ad in ads' :key="id">
+                                    <Box  :id="ad.id"></Box>
+                                </div>
+                            </div>
+                        <br>
+                        <hr>
+                        <br>
+
+                        <div class="row">
+                                <div class="list__heading">
+                                    <h2 class='span text-center subtitle mt-3'>
+                                       LES PLUS CONSULTEES
+                                    </h2>
+                                </div>
+
+                                <div  v-for='ad in ads' :key="id">
                                     <Box  :id="ad.id"></Box>
                                 </div>
                                 <br>
-                                <hr>
+
                             </div>
-
-                        <br>
-
-                            <div class="row">
-                                <div class="list__heading">
-                                    <p class='span text-center'>
-                                        Les plus consultées
-                                    </p>
-                                </div>
-
-                                <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
-                                <Box :message="parentMessage"></Box>
-
-                                <hr>
-                            </div>
-
-
-
                         </div>
                     </div>
                 </div>
@@ -78,7 +74,7 @@ import Tags from './Tags.vue'
       },
       methods:{
         getAds() {
-           axios.get('http://127.0.0.1/immo/api/ads').then(
+           axios.get('http://127.0.0.1/immo/api/threeAds').then(
                 response =>
                 this.ads = response.data);
             }
@@ -86,8 +82,3 @@ import Tags from './Tags.vue'
       }
     }
     </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>

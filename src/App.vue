@@ -31,14 +31,14 @@
                 </div>
             </li>
 
-
+            <!--
             <li class="nav-item">
                 <a class="nav-link" href="/dashboardAdmin">Tableau adm</a>
-            </li>
+            </li>  -->
 
             <li class="nav-item">
                 <router-link to="/dashboard" class="nav-link" >
-                     Tableau user
+                     Tableau de bord
                 </router-link>
             </li>
 
@@ -102,18 +102,18 @@
                 </p>
             </div>
 
-            <div class="col-sm-12 col-md-4">
-                <h3 class="text-left">LIENS UTILES</h3>
+            <div class="col-sm-12 col-md-4 ml-0 text-left">
+                <p> <h3 class=" ml-0 text-left">LIENS </h3>
 
-                <p>
-                    <a href="./index.php#about" class="">
+
+                    <a href="/about" class="">
                         <i class="fas fa-arrow-right"></i> A-propos
                     </a> <br>
-                    <a href="./index.php?action=contact">
+                    <a href="./contact">
                         <i class="fas fa-arrow-right"></i> Contact
                     </a><br>
-                    <a href="./index.php?action=cgu">
-                        <i class="fas fa-arrow-right"></i> CGV
+                    <a href="/cgu">
+                        <i class="fas fa-arrow-right"></i> CGU
                     </a>
 
                 </p>

@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+$dashboard = 'https://127.0.0.1:8080/dashboard';
+$register = 'http://127.0.0.1:8080/register';
+$img_folder = 'http://127.0.0.1/immo/src/assets/img/';
+
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header(
@@ -123,7 +127,7 @@ function register()
                 'password1' => verifyInput($_POST['password1']),
             ];
 
-            exit();
+            header('Location: ' . $register);
         }
         if (empty($errors)) {
             $email = verifyInput($_POST['email']);
@@ -156,7 +160,7 @@ function register()
 
             $user_id = $pdo->lastInsertId();
             $pic = time() . '_' . $_FILES['pic']['name'];
-            $target = '../public/img/' . $pic;
+            $target = $img_folder . '/' . $pic;
 
             if (move_uploaded_file($_FILES['pic']['tmp_name'], $target)) {
                 $req = $pdo->prepare("UPDATE users SET
@@ -178,9 +182,9 @@ function register()
         ?>
 <script>
 alert(
-    "Création de compte réussie, un email de vérification vous sera envoyé pour la vérification de compte, bienvenue à Immobilier Bénin"
+    "Création de compte réussie, bienvenue à Immobilier Bénin"
 );
-window.location.replace("../index.php?action=dashboard");
+window.location.replace($dashboard);
 </script>
 <?php
     }
@@ -223,19 +227,6 @@ function search()
         }
     }
 }
-
-/*
-    function getAllCars(){
-        $pdo = getConnexion();
-        $req = $pdo->prepare("SELECT *  FROM cars
-        WHERE status = ? ORDER BY id DESC");
-        $req->execute(array('Disponible'));
-        $datas = $req->fetchAll(PDO::FETCH_ASSOC);
-        $req->closeCursor();
-        sendJSON($datas);
-        return $datas;
-    }
-*/
 
 function getMyAds()
 {
@@ -704,7 +695,7 @@ exit();
             ?>
 <script>
 alert("Changements enregistrés avec succès, ils seront appliqués dès votre prochaine connexion");
-window.location.replace("../index.php?action=dashboard");
+window.location.replace($dashboard);
 </script>
 <?php
         }
@@ -1189,11 +1180,22 @@ function getAdsByLocation($location)
     sendJSON($datas);
 }
 
-function getAds()
+function getThreeAds()
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
     ads ORDER BY id DESC LIMIT 3");
+    $req->execute();
+    $datas = $req->fetchAll();
+    $req->closeCursor();
+    sendJSON($datas);
+}
+
+function getAds()
+{
+    $pdo = getConnexion();
+    $req = $pdo->prepare("SELECT * FROM
+    ads ORDER BY id");
     $req->execute();
     $datas = $req->fetchAll();
     $req->closeCursor();
