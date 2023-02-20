@@ -8,7 +8,7 @@
                      </div>
                      <hr>
 
-                     <div class="tags__body text-center">
+                     <div class="tags__body  text-center">
                          <div class="tag">
                              <router-link to="/appartments" >
                                  <i class="bi bi-building"></i>  Appartments
@@ -31,6 +31,10 @@
                          </div>
 
                          <hr>
+                     </div>
+
+                     <div class="tags__btn">
+                        <i class="bi bi-caret-down onclick='showTag1'"></i>
                      </div>
      </div>
 
@@ -84,6 +88,8 @@
      </div>
     </div>
  </template>
+
+
 
  <script>
  export default {

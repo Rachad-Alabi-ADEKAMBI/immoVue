@@ -1,9 +1,14 @@
 <?php
 session_start();
-
+/*
 $dashboard = 'https://127.0.0.1:8080/dashboard';
 $register = 'http://127.0.0.1:8080/register';
 $img_folder = 'http://127.0.0.1/immo/src/assets/img/';
+*/
+
+$dashboard = 'https://immobilierbenin.com/dashboard';
+$register = 'https://immobilierbenin.com/register';
+$img_folder = 'http://127.0.0.1/immo/src/assets/';
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -20,6 +25,16 @@ function getConnexion()
     );
 }
 
+/*
+function getConnexion()
+{
+    return new PDO(
+        'mysql:host=localhost; dbname=adra7128_immobilierbenin; charset=UTF8',
+        'adra7128_immo',
+        'hjhkbhb#55@hjYGHI'
+    );
+}
+*/
 $error = ['error' => false];
 $action = '';
 
@@ -1160,7 +1175,9 @@ function getAd($id)
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
-    ads WHERE id = ?
+    ads  WHERE id = ?
+    INNER JOIN users ON
+    ads.seller_id = users.id
      ORDER BY id DESC");
     $req->execute([$id]);
     $datas = $req->fetchAll();
@@ -1195,7 +1212,7 @@ function getAds()
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
-    ads ORDER BY id");
+    ads ORDER BY id DESC");
     $req->execute();
     $datas = $req->fetchAll();
     $req->closeCursor();

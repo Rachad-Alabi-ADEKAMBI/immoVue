@@ -16,9 +16,9 @@
                                </h2>
                              </div>
 
-                             <div  v-for='ad in ads' :key="id">
-                                     <Box  :id="ad.id"></Box>
-                                 </div>
+                             <div  v-for='ad in ads' :key="ad.id">
+                                    <Box  :id="ad.id"></Box>
+                                </div>
                              <hr>
                            </div>
                          </div>
@@ -48,7 +48,8 @@
        data(){
          return{
              ads:[],
-             parentMessage: 'Hello from the parent component!'
+             parentMessage: 'Hello from the parent component!',
+             id: ''
          }
        },
        mounted: function(){
@@ -56,7 +57,7 @@
        },
        methods:{
          getAds() {
-            axios.get('http://127.0.0.1/immo/api/houses').then(
+            axios.get('https://127.0.0.1/immo/api/houses').then(
                  response =>
                  this.ads = response.data);
              }

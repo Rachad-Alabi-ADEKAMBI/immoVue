@@ -18,7 +18,7 @@
                                     </h2>
                                 </div>
 
-                                <div  v-for='ad in ads' :key="id">
+                                <div  v-for='ad in ads' :key="ad.id">
                                     <Box  :id="ad.id"></Box>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                     </h2>
                                 </div>
 
-                                <div  v-for='ad in ads' :key="id">
+                                <div  v-for='ad in ads' :key="ad.id">
                                     <Box  :id="ad.id"></Box>
                                 </div>
                                 <br>
@@ -66,7 +66,8 @@ import Tags from './Tags.vue'
       data(){
         return{
             ads:[],
-            parentMessage: 'Hello from the parent component!'
+            parentMessage: 'Hello from the parent component!',
+            id: ''
         }
       },
       mounted: function(){

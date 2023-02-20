@@ -108,17 +108,19 @@
                                                 </p>
 
                                                 <div class="share-btns">
-                                                    <div class="share-btn whatsapp">
+                                                    <div class="share-btn whatsapp"  @click="shareByWhatsapp(detail.id)">
                                                         <i class="fab fa-whatsapp"></i>
                                                     </div>
 
-                                                    <div class="share-btn facebook">
+
+                                                    <div class="share-btn facebook"  @click="shareByFacebook(detail.id)">
                                                         <i class="fab fa-facebook"></i>
                                                     </div>
 
-                                                    <div class="share-btn mail">
-                                                        <i class="fas fa-envelope"></i>
-                                                    </div>
+                                                    <a  class="share-btn mail"
+                                                    href="mailto:?subject=Decouvre cette annonce&amp;body=Voici l'URL de la page : https://immobilierbenin.com/item?id=detail.id">
+                                                    <i class="fas fa-envelope"></i>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -149,7 +151,7 @@
 
 
                                                     <div class="share-btn phone">
-                                                        <i class="fas fa-phone"></i>
+                                                        <i class="bi bi-phone"></i>
                                                     </div>
 
                                         </div>
@@ -210,6 +212,9 @@ import Tags from './Tags.vue'
     getImgUrl(pic) {
     return "http://127.0.0.1/immo/src/assets/img/" + pic;
 },
+shareByWhatsapp(id){
+window.location.replace('https://wa.me/?https://immobilierbenin.com/item/'+id);
+}
         }
     }
     </script>

@@ -56,7 +56,7 @@
        },
        methods:{
          getAds() {
-            axios.get('http://127.0.0.1/immo/api/lands').then(
+            axios.get('https://immobilierbenin.com/api/lands').then(
                  response =>
                  this.ads = response.data);
              }
