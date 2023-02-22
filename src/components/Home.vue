@@ -75,7 +75,7 @@ import Tags from './Tags.vue'
       },
       methods:{
         getAds() {
-           axios.get('http://127.0.0.1/immo/api/threeAds').then(
+           axios.get('http://127.0.0.1/immo/api/ads').then(
                 response =>
                 this.ads = response.data);
             }

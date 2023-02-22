@@ -1175,10 +1175,7 @@ function getAd($id)
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
-    ads  WHERE id = ?
-    INNER JOIN users ON
-    ads.seller_id = users.id
-     ORDER BY id DESC");
+    ads  WHERE id = ?");
     $req->execute([$id]);
     $datas = $req->fetchAll();
     $req->closeCursor();
