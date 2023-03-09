@@ -49,8 +49,12 @@
 
             <div class="icon">
                 <i class="fas fa-layer-group"></i>
-                {{detail.area  }} m2
+                {{detail.area  }} m²
             </div>
+            <div class="icon">
+                                            <i class="bi bi-car-front"></i>
+                                            {{detail.parkings  }} parking
+                                      </div>
         </div>
 
         <button class="btn btn-primary">
@@ -72,7 +76,9 @@ export default {
       name: 'Box',
   props: {
     parentMessage: '',
-    id: ''
+    details: [
+        {id: '1', name:'appartement 1', rooms: '3', bathrooms: '2', parking: '1', pic1: 'home1.jpeg', price: '150000', }
+    ]
   },
   data(){
     return{
@@ -83,17 +89,19 @@ export default {
     this.getDetails();
   },
   methods:{
-    getDetails(c){
-            axios.get(`http://127.0.0.1/immo/api/item/${this.id}`)
+
+    getDetails(){
+            axios.get(`https://api.adekambirachad.com/api/V1/ad/1`)
   .then(response => (this.details = response.data))
   .catch(error => console.log(error))
             },
             format(num){
     let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);
     return res;
+
 },
             getImgUrl(pic) {
-    return "http://127.0.0.1/immo/src/assets/img/" + pic;
+    return "https://immobilierbenin.com/assets/img/" + pic;
 }
 
 

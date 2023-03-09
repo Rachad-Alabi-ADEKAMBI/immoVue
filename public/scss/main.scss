@@ -18,7 +18,9 @@ $red: #cb2027;
 html, body{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
+    line-height: 1.7em;
+    text-align: justify;
     padding: 0;
     margin: 0;
     font-size: 1em;
@@ -166,6 +168,23 @@ i{
     display: none;
 }
 
+.about{
+    img{
+        width: 95%;
+        height: auto;
+        border-radius: 5px;
+        margin: 50px auto;
+    }
+
+    &__text{
+        .buttons{
+            .btn{
+                margin: 5px;
+            }
+        }
+    }
+}
+
 
 .dashboard{
     height: auto;
@@ -213,6 +232,10 @@ i{
    @include btn();
 }
 
+.btn-link{
+    width: 250px;
+}
+
 .btn-grey{
    @include btn();
 }
@@ -249,6 +272,7 @@ i{
 
 .btn-primary:hover{
     background-color: $green;
+    border-color: $green;
     a{
         color: $white;
     }
@@ -444,6 +468,13 @@ span{
                             }
                         }
                     }
+
+                    .cards{
+                        @include flex();
+                        .card{
+                            margin: auto 5px 10px 5px;
+                        }
+                    }
                 }
 
                .item{
@@ -624,34 +655,8 @@ span{
                 }
             }
 
-        }}
-
-
-            .about{
-
-                &__title{
-                    display: table;
-
-                    h2{
-                        text-align: center;
-                        display: table-cell;
-                        vertical-align: middle;
-                    }
-                }
-
-                .items{
-                    &__item{text-align: center;
-                        i{
-                            color: $blue;
-                            font-size: 2em;
-                        }
-
-                        p{
-                            font-weight: bold;
-                        }
-                    }
-                }
-            }
+        }
+    }
         }
     }
 

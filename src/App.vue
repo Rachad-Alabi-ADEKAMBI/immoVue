@@ -2,7 +2,7 @@
 
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><img src="./assets/img/logo-transparent.png" alt=""></a>
+    <a class="navbar-brand" href="/"><img src="http://immobilierbenin.com/public/img/logo-transparent.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,18 +23,29 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/appartments">Appartements</a>
-                    <a class="dropdown-item" href="./houses">Maisons</a>
-                    <a class="dropdown-item" href="./lands">Terrains</a>
+                    <a class="dropdown-item" href="/houses">Maisons</a>
+                    <a class="dropdown-item" href="/lands">Terrains</a>
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/ads">Tout voir</a>
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/sellers">Annonceurs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">A propos</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+
             <!--
             <li class="nav-item">
                 <a class="nav-link" href="/dashboardAdmin">Tableau adm</a>
-            </li>  -->
+            </li>
 
             <li class="nav-item">
                 <router-link to="/dashboard" class="nav-link" >
@@ -44,7 +55,7 @@
 
 
 
-            <!--  <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>  -->
         </ul>
@@ -52,12 +63,6 @@
 
             <button class="btn btn-primary my-2 " type="submit">
                 <router-link to="/login" >Connexion     </router-link>
-            </button>
-
-            <button class="btn btn-danger m-2" type="submit">
-                <a href="http://127.0.0.1/immo/api/api.php?action=logout">
-                    Déconnexion
-                </a>
             </button>
         </div>
     </div>
@@ -72,7 +77,7 @@
     <div class=" container bg-light">
         <div class="row pt-3 text-left">
             <div class="col-sm-12 col-md-4">
-                <img src="./assets/img/logo-transparent.png" alt=""> <br>
+                <img src="http://immobilierbenin.com/public/img/logo-transparent.png" alt=""> <br>
 
                 <p>
                     <i class="fas fa-envelope"></i>
@@ -109,7 +114,7 @@
                     <a href="/about" class="">
                         <i class="fas fa-arrow-right"></i> A-propos
                     </a> <br>
-                    <a href="./contact">
+                    <a href="/contact">
                         <i class="fas fa-arrow-right"></i> Contact
                     </a><br>
                     <a href="/cgu">
@@ -152,7 +157,7 @@ props: {
 },
 data(){
 return{
-    logged: 'yes'
+   // logged: 'yes'
 }
 },
 mounted: function(){

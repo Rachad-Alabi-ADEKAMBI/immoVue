@@ -24,14 +24,14 @@ function getConnexion()
         ''
     );
 }
-
 /*
+
 function getConnexion()
 {
     return new PDO(
-        'mysql:host=localhost; dbname=adra7128_immobilierbenin; charset=UTF8',
+        'mysql:host=localhost; dbname=adra7128_immo; charset=UTF8',
         'adra7128_immo',
-        'hjhkbhb#55@hjYGHI'
+        'adra7128_immo'
     );
 }
 */
@@ -1131,7 +1131,7 @@ function getUsers()
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
-    users ORDER BY id DESC");
+    users WHERE role = 'user' ORDER BY id DESC");
     $req->execute();
     $datas = $req->fetchAll();
     $req->closeCursor();

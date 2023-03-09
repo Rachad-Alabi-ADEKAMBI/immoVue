@@ -138,7 +138,7 @@
                                 </h3>
                                 </div>
                                 <div class="agent__infos">
-                                    <img src="../assets/img/maison4.jpg" alt="">
+                                    <img src="public/img/pdg.jpeg" alt="">
                                     <div class="agent__infos__list">
                                         <h4>
                                             Sarah
@@ -201,7 +201,7 @@ import Tags from './Tags.vue'
       },
       methods:{
         getItem() {
-            axios.get(`http://127.0.0.1/immo/api/item/${this.id}`)
+            axios.get(`https://immobilierbenin.com/api/item/${this.id}`)
   .then(response => (this.details = response.data))
   .catch(error => console.log(error))
             },
@@ -210,7 +210,7 @@ import Tags from './Tags.vue'
     return res;
 },
     getImgUrl(pic) {
-    return "http://127.0.0.1/immo/src/assets/img/" + pic;
+    return "https://immobilierbenin.com/public/img/" + pic;
 },
 shareByWhatsapp(id){
 window.location.replace('https://wa.me/?https://immobilierbenin.com/item/'+id);

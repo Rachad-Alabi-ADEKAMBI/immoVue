@@ -1,82 +1,85 @@
-<?php
-include 'api.php';
+    <?php
+    include 'api.php';
 
-try {
-    if (!empty($_GET['demande'])) {
-        $url = explode('/', filter_var($_GET['demande'], FILTER_SANITIZE_URL));
-        switch ($url[0]) {
-            case 'users':
-                getUsers();
-                break;
+    try {
+        if (!empty($_GET['demande'])) {
+            $url = explode(
+                '/',
+                filter_var($_GET['demande'], FILTER_SANITIZE_URL)
+            );
+            switch ($url[0]) {
+                case 'users':
+                    getUsers();
+                    break;
 
-            case 'threeAds':
-                getThreeAds();
-                break;
+                case 'threeAds':
+                    getThreeAds();
+                    break;
 
-            case 'ads':
-                getAds();
-                break;
+                case 'ads':
+                    getAds();
+                    break;
 
-            case 'appartments':
-                getAppartments();
-                break;
+                case 'appartments':
+                    getAppartments();
+                    break;
 
-            case 'houses':
-                getHouses();
-                break;
+                case 'houses':
+                    getHouses();
+                    break;
 
-            case 'lands':
-                getLands();
-                break;
+                case 'lands':
+                    getLands();
+                    break;
 
-            case 'myAds':
-                getMyAds();
-                break;
+                case 'myAds':
+                    getMyAds();
+                    break;
 
-            case 'item':
-                if (!empty($url[1])) {
-                    getAd($url[1]);
-                } else {
-                    throw new Exception(
-                        "Vous n'avez pas renseigné l'id de la demande"
-                    );
-                }
+                case 'item':
+                    if (!empty($url[1])) {
+                        getAd($url[1]);
+                    } else {
+                        throw new Exception(
+                            "Vous n'avez pas renseigné l'id de la demande"
+                        );
+                    }
 
-                break;
+                    break;
 
-            case 'user':
-                if (!empty($url[1])) {
-                    getUser($url[1]);
-                } else {
-                    throw new Exception(
-                        "Vous n'avez pas renseigné l'id de la demande"
-                    );
-                }
+                case 'user':
+                    if (!empty($url[1])) {
+                        getUser($url[1]);
+                    } else {
+                        throw new Exception(
+                            "Vous n'avez pas renseigné l'id de la demande"
+                        );
+                    }
 
-                break;
+                    break;
 
-            case 'location':
-                if (!empty($url[1])) {
-                    getAdsByLocation($url[1]);
-                } else {
-                    throw new Exception(
-                        "Vous n'avez pas renseigné l'id de la demande"
-                    );
-                }
+                case 'location':
+                    if (!empty($url[1])) {
+                        getAdsByLocation($url[1]);
+                    } else {
+                        throw new Exception(
+                            "Vous n'avez pas renseigné l'id de la demande"
+                        );
+                    }
 
-                break;
+                    break;
 
-            default:
-                throw new Exception("La demande n'est pas valide");
+                default:
+                    throw new Exception("La demande n'est pas valide");
+            }
+        } else {
+            throw new Exception('Problème de récupération de données. ');
         }
-    } else {
-        throw new Exception('Problème de récupération de données. ');
-    }
-} catch (Exception $e) {
-    $erreur = [
-        'message' => $e->getMessage(),
-        'code' => $e->getCode(),
-    ];
+    } catch (Exception $e) {
+        $erreur = [
+            'message' => $e->getMessage(),
+            'code' => $e->getCode(),
+        ];
 
-    print_r($erreur);
-}
+        print_r($erreur);
+    }

@@ -3,7 +3,9 @@
 html, body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 1.7em;
+  text-align: justify;
   padding: 0;
   margin: 0;
   font-size: 1em;
@@ -120,6 +122,16 @@ i {
   display: none;
 }
 
+.about img {
+  width: 95%;
+  height: auto;
+  border-radius: 5px;
+  margin: 50px auto;
+}
+.about__text .buttons .btn {
+  margin: 5px;
+}
+
 .dashboard {
   height: auto;
   min-height: 75vh;
@@ -168,6 +180,10 @@ i {
   cursor: pointer;
 }
 
+.btn-link {
+  width: 250px;
+}
+
 .btn-grey {
   color: white;
   background-color: #6a70a1;
@@ -214,6 +230,7 @@ i {
 
 .btn-primary:hover {
   background-color: #7dbf4a;
+  border-color: #7dbf4a;
 }
 .btn-primary:hover a {
   color: white;
@@ -393,6 +410,16 @@ span {
 .main .content .section .container .row .list .box__infos .btn {
   margin-right: 10px;
 }
+.main .content .section .container .row .list .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  line-height: 1em;
+}
+.main .content .section .container .row .list .cards .card {
+  margin: auto 5px 10px 5px;
+}
 .main .content .section .container .row .item {
   display: block;
 }
@@ -550,24 +577,6 @@ span {
 .main .content .section .container .contact__item .contact-box img {
   width: 120px;
   height: 80px;
-}
-.main .content .about__title {
-  display: table;
-}
-.main .content .about__title h2 {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-}
-.main .content .about .items__item {
-  text-align: center;
-}
-.main .content .about .items__item i {
-  color: #6a70a1;
-  font-size: 2em;
-}
-.main .content .about .items__item p {
-  font-weight: bold;
 }
 
 /*responsive for 768px*/
