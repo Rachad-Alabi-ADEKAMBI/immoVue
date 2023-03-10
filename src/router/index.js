@@ -15,6 +15,7 @@ import TagView from '../views/TagView.vue'
 import LocationView from '../views/LocationView.vue'
 import AboutView from '../views/AboutView.vue'
 import SellersView from '../views/AboutView.vue'
+import AdsBySellerView from '../views/AdsBySellerView.vue'
 
 
 const routes = [
@@ -38,6 +39,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/SellersView.vue')
+  },
+  {
+    path: '/adsBySeller',
+    name: 'adsBySeller',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/AdsBySellerView.vue')
   },
   {
     path: '/login',
