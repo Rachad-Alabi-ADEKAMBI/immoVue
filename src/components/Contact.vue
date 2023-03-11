@@ -7,7 +7,7 @@
                     NOUS CONTACTER
                 </h1> <br>
 
-                <img src="" class='w-10' alt=""> <br>
+                <img src="http://immobilierbenin.com/public/img/boss.jpg" class='w-10' alt="pdg immobilier benin"> <br>
 
                 <span>
                     Lelouch, Directeur general

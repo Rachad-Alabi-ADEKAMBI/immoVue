@@ -49,17 +49,17 @@
                                                         <div class="row">
                                                             <div class="col-sm-6 col-md-3">
                                                                 <img :src='getImgUrl(detail.pic1)' class="pic">
-                                                        </div>
+                                                             </div>
 
-                                                        <div class="col-sm-6 col-md-3">
+                                                             <div class="col-sm-6 col-md-3" v-if="detail.pic3 && detail.pic3.trim() !== ''">
                                                             <img :src='getImgUrl(detail.pic3)' class="pic">
                                                         </div>
 
-                                                        <div class="col-sm-6 col-md-3">
+                                                        <div class="col-sm-6 col-md-3" v-if="detail.pic4 && detail.pic4.trim() !== ''">
                                                              <img :src='getImgUrl(detail.pic4)' class="pic">
                                                         </div>
 
-                                                        <div class="col-sm-6 col-md-3">
+                                                        <div class="col-sm-6 col-md-3" v-if="detail.pic5 && detail.pic5.trim() !== ''">
                                                             <img :src='getImgUrl(detail.pic5)' class="pic">
                                                         </div>
                                                 </div>
@@ -75,10 +75,6 @@
                                                     <i class="bi-bookmark-fill"></i> En vente <br> <br>
 
                                                         {{ detail.description}}
-                                                </p> <br>
-
-                                                <p class="text text-grey">
-                                                  {{ detail.more_description}}
                                                 </p>
                                             </div>
 
@@ -88,6 +84,10 @@
                                                 <h3 class="" >
                                                     Informations supplémentaires
                                                 </h3>
+
+                                                <p class="text text-grey">
+                                                  {{ detail.more_description}}
+                                                </p>
 
                                                 <div class="infos">
                                                     <div class="info">
@@ -102,10 +102,51 @@
 
                                             <hr>
 
+                                            <div class="agent">
+                                <div class="agent__heading">
+                                <h3>
+                                    Annonceur
+                                </h3>
+                                </div>
+                                <div class="agent__infos">
+                                    <img :src="getImgUrl(detail.image)">
+                                    <div class="agent__infos__list">
+                                        <h4>
+                                            {{  detail.first_name}}  {{  detail.last_name}}
+                                        </h4>
+
+                                        <div class="agent-contact">
+                                            <a :href="'adsBySeller?id=' + detail.seller_id" class="btn btn-primary">
+                                                Voir profil
+                                            </a>
+
+                                                <div class="share-btn whatsapp">
+                                                    <a :href="'https://wa.me/' + detail.phone_code + detail.phone_number + '?text=Bonjour,%votre%annonce%sur%Immobilier%Bénin%...'">
+                                                    <i class="fab fa-whatsapp"></i>
+                                                     </a>
+                                                </div>
+                                                    <div class="share-btn phone" @click="callSeller(detail.phone_code, detail.phone_number)">
+                                                        <i class="bi bi-phone"></i>
+                                                    </div>
+
+                                                    <div class="share-btn mail">
+                                                    <a :href="'mailto:' + detail.email" >
+                                                        <i class="fas fa-envelope"></i>
+                                                     </a>
+                                                </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <hr>
+
+
                                             <div class="item__body__share">
-                                                <p class="text text-black">
+                                                <h3 class="">
                                                     Partager cette annonce:
-                                                </p>
+                                                </h3>
 
                                                 <div class="share-btns">
                                                     <div class="share-btn whatsapp"  @click="shareByWhatsapp(detail.id)">
@@ -131,33 +172,7 @@
 
                             <hr>
 
-                            <div class="agent">
-                                <div class="agent__heading">
-                                <h3>
-                                    Annonceur
-                                </h3>
-                                </div>
-                                <div class="agent__infos">
-                                    <img src="public/img/pdg.jpeg" alt="">
-                                    <div class="agent__infos__list">
-                                        <h4>
-                                            Sarah
-                                        </h4>
 
-                                        <div class="agent-contact">
-                                            <div class="share-btn whatsapp">
-                                                        <i class="fab fa-whatsapp"></i>
-                                                    </div>
-
-
-                                                    <div class="share-btn phone">
-                                                        <i class="bi bi-phone"></i>
-                                                    </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                 </div>
             </div>
@@ -214,6 +229,9 @@ import Tags from './Tags.vue'
 },
 shareByWhatsapp(id){
 window.location.replace('https://wa.me/?https://immobilierbenin.com/item/'+id);
+},
+callSeller(code, phone){
+    window.location.href = 'tel:' + code + phone;
 }
         }
     }

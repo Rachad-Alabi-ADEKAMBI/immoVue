@@ -11,7 +11,7 @@
   export default {
     name: 'AdsBySellerView',
     components: {
-    Sellers
+    AdsBySeller
     }
   }
   </script>

@@ -1138,7 +1138,6 @@ function getUsers()
     sendJSON($datas);
 }
 
-
 function getAppartments()
 {
     $pdo = getConnexion();
@@ -1176,7 +1175,9 @@ function getAd($id)
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
-    ads  WHERE id = ?");
+    ads INNER JOIN users
+        ON ads.seller_id = users.id
+         WHERE ads.id = ?");
     $req->execute([$id]);
     $datas = $req->fetchAll();
     $req->closeCursor();
@@ -1233,8 +1234,9 @@ function getAdsBySeller($id)
 {
     $pdo = getConnexion();
     $req = $pdo->prepare("SELECT * FROM
-    ads WHERE seller_id = ?
-    ORDER BY id DESC");
+    ads INNER JOIN users ON  users.id = ads.seller_id
+     WHERE ads.seller_id = ?
+    ORDER BY ads.id DESC");
     $req->execute([$id]);
     $datas = $req->fetchAll();
     $req->closeCursor();

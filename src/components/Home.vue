@@ -179,15 +179,15 @@ import Tags from './Tags.vue'
       },
       methods:{
         getAds() {
-                axios.get('http://immobilierbenin.com/api/threeAds').then(
+                axios.get('https://immobilierbenin.com/api/threeAds').then(
                 response =>
                 this.ads = response.data);
-                axios.get('http://immobilierbenin.com/api/houses').then(
+                axios.get('https://immobilierbenin.com/api/houses').then(
                 response =>
                 this.details = response.data);
             },
             getImgUrl(pic) {
-    return "http://immobilierbenin.com/public/img/" + pic;
+    return "https://immobilierbenin.com/public/img/" + pic;
 },
 format(num){
     let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);

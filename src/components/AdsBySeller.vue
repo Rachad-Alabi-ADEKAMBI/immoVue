@@ -7,19 +7,22 @@
                    </Tags>
 
                    <div class="col-sm-12 col-md-9">
-                       <div class="list">
+                       <div class="list"  v-for="detail in details" :key="detail.id"  >
                          <div class="container">
                             <div class="row">
-                                <div class="col-sm-12 col-md-5 mx-auto cards " v-for="detail in details" :key="detail.id">
-                                  <div class="card " style="width: 18rem;">
-                                    <img v-if="detail.pic === ''" class="card-img-top" src="https://immobilierbenin.com/public/img/img1.jpg" alt="annonces de vente et location de biens immobiliers, maison, appartements au Bénin" width="60" height="60">
+                                <div class="col-sm-12 col-md-3">
+                                  <img v-if="detail.pic === ''" class="card-img-top mt-3"
+                                   src="https://immobilierbenin.com/public/img/img1.jpg"
+                                   alt="annonces de vente et location de biens immobiliers, maison, appartements au Bénin" width="80" height="80">
                                       <img v-else class="card-img-top" :src="getImgUrl(detail.pic)" alt="annonces de vente et location de biens immobilier au Bénin" width="200" height="120">
 
+                                </div>
 
-                                            <h5 class="card-title text-center fw-bold">
-                                              <span>
-                                                {{ detail.first_name }} {{ detail.last_name  }}
-                                              </span>
+                                <div class="col-sm-12 col-md-9 ">
+                                  <h5 class="card-title text-center fw-bold">
+                                            <span class="subtitle">
+                                              {{ detail.first_name }} {{ detail.last_name  }}
+                                            </span>
                                             </h5>
                                         <ul class="list-group list-group-flush">
                                           <li class="list-group-item">"{{ detail.about}}"</li>
@@ -33,11 +36,10 @@
                                             <li class="list-group-item">
                                               <i class="fas fa-envelope"></i> {{ detail.email }}</li>
                                         </ul>
-                                    </div>
-                              </div>
+                                </div>
                              </div>
 
-                            </div>
+                            </div> <hr>
                            <div class="row">
                              <div class="list__heading">
                                <h2 class="span text-center subtitle">
@@ -45,7 +47,7 @@
                                </h2>
                              </div>
 
-                             <div class="col-12 box" v-for="detail in ads" :key="detail.id">
+                             <div class="col-12 box">
                                     <div class="box__img">
                                         <img :src='getImgUrl(detail.pic1)'>
                                         <p class="text text-grey"><span><i class="bi bi-tag"></i>Etat:</span> En vente</p>
@@ -131,13 +133,12 @@
      export default {
          name: 'AdsBySeller',
          components: {
-     Box,
      Tags
    },
 
        data(){
          return{
-             ads:[],
+             details:[],
              parentMessage: 'Hello from the parent component!'
          }
        },
@@ -150,12 +151,8 @@
        },
        methods:{
             getAds() {
-                axios.get(`https://http://immobilierbenin.com/api/user/${this.id}`)
-  .then(response => (this.details = response.data))
-  .catch(error => console.log(error)),
-
             axios.get(`https://immobilierbenin.com/api/adsBySeller/${this.id}`)
-  .then(response => (this.ads = response.data))
+  .then(response => (this.details = response.data))
   .catch(error => console.log(error))
             },
              getImgUrl(pic) {

@@ -122,14 +122,14 @@ export default {
   methods:{
     async getAds(){
       try {
-        const response = await axios.get(`http://immobilierbenin.com/api/location/${this.location}`);
+        const response = await axios.get(`https://immobilierbenin.com/api/location/${this.location}`);
         this.ads = response.data;
       } catch (error) {
         console.log(error);
       }
     },
     getImgUrl(pic) {
-      return "http://immobilierbenin.com/public/img/" + pic;
+      return "https://immobilierbenin.com/public/img/" + pic;
     },
     format(num){
       let res = new Intl.NumberFormat('fr-FR', { maximumSignificantDigits: 3 }).format(num);

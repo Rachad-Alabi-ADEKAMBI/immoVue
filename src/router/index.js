@@ -14,7 +14,7 @@ import ItemView from '../views/ItemView.vue'
 import TagView from '../views/TagView.vue'
 import LocationView from '../views/LocationView.vue'
 import AboutView from '../views/AboutView.vue'
-import SellersView from '../views/AboutView.vue'
+import SellersView from '../views/SellersView.vue'
 import AdsBySellerView from '../views/AdsBySellerView.vue'
 
 
