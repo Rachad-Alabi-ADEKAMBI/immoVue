@@ -297,6 +297,35 @@ span {
   width: 100%;
   margin: 15px auto;
 }
+.main .content .section .container .hero {
+  height: 60vh;
+  min-height: 400px;
+  margin: 0 auto;
+  display: block;
+  background-image: url("http://immobilierbenin.com/public/img/bureau2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-top: 90px;
+}
+.main .content .section .container .hero__content {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  padding-top: 60px;
+  text-align: center;
+}
+.main .content .section .container .hero__content h1 {
+  font-size: 3em;
+  font-style: italic;
+  color: white;
+}
+.main .content .section .container .hero__content p {
+  margin: 20px auto;
+  font-style: 1.1em;
+  font-weight: 800;
+}
 .main .content .section .container .row .tags {
   background-color: white;
   border: 1px rgb(235, 223, 223) solid;
@@ -501,10 +530,14 @@ span {
   margin: 5px;
 }
 .main .content .section .container .row .item__body__more-infos .infos .info i {
-  color: #6F6F6F;
+  color: #6a70a1;
+}
+.main .content .section .container .row .item__body__more-infos .infos .info .bi {
+  margin-top: 10px;
+  font-weight: bold;
 }
 .main .content .section .container .row .item__body .share-btns {
-  width: 200px;
+  width: 220px;
   float: left;
   display: flex;
   flex-direction: row;
@@ -520,6 +553,12 @@ span {
   display: table;
   margin: 5px;
 }
+.main .content .section .container .row .item__body .share-btns .save {
+  background-color: goldenrod;
+}
+.main .content .section .container .row .item__body .share-btns .save .fas {
+  display: none;
+}
 .main .content .section .container .row .item__body .share-btns .whatsapp {
   background-color: #7dbf4a;
 }
@@ -528,6 +567,12 @@ span {
 }
 .main .content .section .container .row .item__body .share-btns .mail {
   background-color: #6a70a1;
+}
+.main .content .section .container .row .item__body .share-btns .save:hover,
+.main .content .section .container .row .item__body .share-btns .facebook:hover,
+.main .content .section .container .row .item__body .share-btns .whatsapp:hover,
+.main .content .section .container .row .item__body .share-btns .mail:hover {
+  filter: brightness(120%);
 }
 .main .content .section .container .agent {
   margin: auto;
@@ -542,7 +587,7 @@ span {
   margin: auto 15px;
 }
 .main .content .section .container .agent__infos img {
-  width: 150px;
+  width: 130px;
   height: 90px;
 }
 .main .content .section .container .agent__infos__list {
@@ -556,6 +601,9 @@ span {
   flex-wrap: wrap;
   line-height: 1em;
 }
+.main .content .section .container .agent__infos__list .agent-contact .btn {
+  height: 45px;
+}
 .main .content .section .container .agent__infos__list .agent-contact .share-btn {
   width: 40px;
   height: 40px;
@@ -564,11 +612,24 @@ span {
   display: table;
   margin: 5px;
 }
+.main .content .section .container .agent__infos__list .agent-contact .share-btn a {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+.main .content .section .container .agent__infos__list .agent-contact .share-btn a i {
+  display: table-cell;
+  vertical-align: middle;
+}
 .main .content .section .container .agent__infos__list .agent-contact .whatsapp {
   background-color: #7dbf4a;
 }
 .main .content .section .container .agent__infos__list .agent-contact .phone {
   background-color: #cb2027;
+}
+.main .content .section .container .agent__infos__list .agent-contact .mail {
+  background-color: #6a70a1;
 }
 .main .content .section .container .contact__item .contact-box ul {
   padding-top: 50px;
@@ -586,6 +647,10 @@ span {
   }
   .mobile-menu {
     display: block;
+  }
+  .main .section .container .hero {
+    height: 40vh;
+    padding-top: 60px;
   }
   .main .section .container .contact__item .contact-box img {
     width: 120px;

@@ -344,6 +344,41 @@ span{
             margin: 15px auto;
 
           .container{
+            .hero{
+                height: 60vh;
+                min-height: 400px;
+                margin: 0 auto;
+                display: block;
+                background-image: url('http://immobilierbenin.com/public/img/bureau2.jpg');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 100%;
+                padding-top: 90px;
+
+
+                &__content{
+                    width: 80%;
+                    margin: auto;
+                    height: 100%;
+                    padding-top: 60px;
+                    text-align: center;
+
+                    h1{
+                        font-size: 3em;
+                        font-style: italic;
+                        color: $white;
+                    }
+
+                    p{
+                        margin: 20px auto;
+                        font-style: 1.1em;
+                        font-weight: 800;
+                    }
+
+
+                }
+            }
 
             .row{
                 .tags{
@@ -564,7 +599,12 @@ span{
                                 margin: 5px;
 
                                 i{
-                                    color: $grey-dark;
+                                    color: $blue;
+                                }
+
+                                .bi{
+                                    margin-top: 10px;
+                                    font-weight: bold;
                                 }
                                }
                             }
@@ -572,12 +612,20 @@ span{
 
 
                     .share-btns{
-                        width: 200px;
+                        width: 220px;
                         float: left;
                                @include flex();
 
                                 .share-btn{
                                   @include share-btn();
+                                }
+
+                                .save{
+                                    background-color: goldenrod;
+
+                                    .fas{
+                                        display: none;
+                                    }
                                 }
 
                                 .whatsapp{
@@ -590,6 +638,13 @@ span{
 
                                 .mail{
                                     background-color: $blue;
+                                }
+
+                                .save:hover,
+                                .facebook:hover,
+                                .whatsapp:hover,
+                                .mail:hover{
+                                    filter: brightness(120%);
                                 }
 
                                }
@@ -607,7 +662,7 @@ span{
                     margin: auto 15px;
 
                     img{
-                        width: 150px;
+                        width: 130px;
                         height: 90px;
                     }
 
@@ -618,8 +673,26 @@ span{
                         .agent-contact{
                             @include flex();
 
+                            .btn{
+                                height: 45px;
+                            }
+
                             .share-btn{
                                 @include share-btn();
+
+                                a{
+                                    margin: auto;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: table;
+
+                                    i{
+                                        display: table-cell;
+                                        vertical-align: middle;
+
+                                    }
+                                }
+
                             }
 
                             .whatsapp{
@@ -628,6 +701,10 @@ span{
 
                             .phone{
                                 background-color: $red;
+                            }
+
+                            .mail{
+                                background-color: $blue;
                             }
 
                         }
@@ -680,6 +757,11 @@ span{
     .main{
         .section{
             .container{
+                .hero{
+                    height: 40vh;
+                    padding-top: 60px;
+                   }
+
                 .contact{
                     &__item{
                         .contact-box{

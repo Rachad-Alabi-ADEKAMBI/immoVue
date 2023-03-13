@@ -9,7 +9,7 @@
                         <div class="tags ">
                             <div class="tags__heading text-center">
                                 <p class="span">
-                                    <i class="fas fa-list"></i> Localisataion
+                                    <i class="fas fa-list"></i> Localisation
                                 </p>
                             </div>
 
@@ -18,6 +18,55 @@
                             </iframe>
                         </div>
                         </div>
+
+                        <div class="tags ">
+
+            <div class="tags__body  text-center">
+                    <div class="" v-if="detail.type !== 'Terrain'">
+                                <div class="tag">
+                                    <p v-if="detail.rooms == 1"> <i class="fas fa-bed"></i> {{ detail.rooms }}  chambre</p>
+                                    <p v-if="detail.rooms > 1"> <i class="fas fa-bed"></i> {{ detail.rooms }}  chambres</p>
+                                </div>
+
+                        <hr>
+                        <div class="tag">
+                        <i class="fas fa-shower"></i> 1 douche
+                        </div>
+
+                        <hr>
+
+                        <div class="tag">
+                        <i class="bi bi-tv"></i> 1 salon
+                        </div>
+
+                        <hr>
+                        <div class="tag">
+                        <i class="fas fa-warehouse"></i> 1 magasin
+                        </div>
+
+                        <hr>
+                        <div class="tag">
+                        <i class="bi bi-car-front"></i> 1 garage
+                        </div>
+
+                        <hr>
+                        <div class="tag">
+                        <i class="fas fa-shower"></i> 1 douche
+                        </div>
+                    </div>
+
+                    <div class="" v-if="detail.type === 'Terrain'">
+                        <div class="tag">
+                        <i class="fas fa-layer-group"></i> 500 m2
+                        </div>
+
+                    </div>
+            </div>
+
+            <div class="tags__btn text-center">
+            <i class="bi bi-caret-down mx-auto" onclick='showTag1()'></i>
+            </div>
+            </div> <br>
 
                             <Tags>
 
@@ -91,11 +140,15 @@
 
                                                 <div class="infos">
                                                     <div class="info">
-                                                        <i class="bi bi-eye"></i> 103 {{ detail.view}}
+                                                        <i class="fas fa-calendar"></i> {{ detail.date_of_insertion}}
                                                     </div>
 
                                                     <div class="info">
-                                                        <i class="bi bi-share"></i> 52 {{ detail.share}}
+                                                        <i class="bi bi-eye"></i> {{ format(detail.views)}}
+                                                    </div>
+
+                                                    <div class="info">
+                                                        <i class="bi bi-share"></i> {{ format(detail.share)}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -149,6 +202,11 @@
                                                 </h3>
 
                                                 <div class="share-btns">
+                                                    <div class="share-btn save"  @click="save(detail.id)">
+                                                        <i class="far fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+
                                                     <div class="share-btn whatsapp"  @click="shareByWhatsapp(detail.id)">
                                                         <i class="fab fa-whatsapp"></i>
                                                     </div>

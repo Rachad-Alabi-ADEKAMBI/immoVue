@@ -2,6 +2,22 @@
     <!--hero starts-->
 <div class="content">
     <section class='section bg-light'>
+        <div class="container">
+            <div class="hero">
+                                <div class="hero__content">
+                                    <h1>
+                                    IMMOBILIER BENIN
+                                    </h1>
+
+                                    <p class="text text-white">
+                                        Annonces de vente & location de biens immobiliers
+                                    </p>
+                                    <a href="/ads" class="btn btn-primary">
+                                        Voir les annonces
+                                    </a>
+                                </div>
+                            </div>
+        </div>
        <div class="container">
 
             <div class="row mx-auto pt-5">
@@ -10,7 +26,6 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-9">
                     <div class="list">
-                        <div class="container ">
                             <div class="row">
                                 <div class="list__heading">
                                     <h2 class='span text-center subtitle'>
@@ -147,7 +162,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+
 
     </section>
 </div>
@@ -157,13 +172,11 @@
 <script>
 import axios from "axios";
 
-import Box from './Box.vue'
 import Tags from './Tags.vue'
 
     export default {
         name: 'Home',
         components: {
-    Box,
     Tags
   },
 
@@ -171,7 +184,8 @@ import Tags from './Tags.vue'
         return{
             ads:[],
             parentMessage: 'Hello from the parent component!',
-            id: ''
+            id: '',
+            details: []
         }
       },
       mounted: function(){
