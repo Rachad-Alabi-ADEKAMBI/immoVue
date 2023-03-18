@@ -2,17 +2,17 @@
     <!--hero starts-->
 <div class="content">
     <section class='section bg-light'>
-        <div class="container">
+
+        <div class="container mt-2">
             <div class="hero">
                                 <div class="hero__content">
-                                    <h1>
-                                    IMMOBILIER BENIN
+                                    <h1 class="animation">
+                                    {{ motAffiche }}
                                     </h1>
-
                                     <p class="text text-white">
                                         Annonces de vente & location de biens immobiliers
                                     </p>
-                                    <a href="/ads" class="btn btn-primary">
+                                    <a href="/ads" class="btn btn-link">
                                         Voir les annonces
                                     </a>
                                 </div>
@@ -94,6 +94,29 @@
                             </div>
                         <br>
                         <hr>
+
+                        <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <img src="https://immobilierbenin.com/public/img/appart1.jpeg" alt="appartement a louer a cotonou benin"
+                                    class="about-img">
+                                </div>
+
+                                <div class="col-sm-12 col-md-6">
+                                    <h2 class="subtitle">
+                                        Qui sommes nous ?
+                                    </h2>
+
+                                    <p class="text text-justify">
+                                        Bienvenue sur immobilierbenin, votre site d'annonces de vente et de location de biens immobiliers au Bénin.
+                                        Nous offrons un service gratuit d'annonces de vente et de location de biens immobiliers pour tous les utilisateurs.
+                                        Vous pouvez publier vos annonces en quelques clics seulement et les mettre à jour à tout moment ...
+                                    </p>
+
+                                    <a href="/about" class="btn btn-primary">
+                                        A propos
+                                    </a>
+                                </div>
+                        </div> <hr>
                         <div class="row">
                                 <div class="list__heading">
                                     <h2 class='span text-center subtitle mt-3'>
@@ -171,13 +194,14 @@
 
 <script>
 import axios from "axios";
-
+import Search from "./Search.vue";
 import Tags from './Tags.vue'
 
     export default {
         name: 'Home',
         components: {
-    Tags
+    Tags,
+    Search
   },
 
       data(){
@@ -185,12 +209,23 @@ import Tags from './Tags.vue'
             ads:[],
             parentMessage: 'Hello from the parent component!',
             id: '',
-            details: []
+            details: [],
+            mot: 'IMMOBILIER BENIN',
+            indexLettre: 0,
+    motAffiche: ''
         }
       },
       mounted: function(){
           this.getAds();
       },
+      created() {
+    setInterval(() => {
+      if (this.indexLettre < this.mot.length) {
+        this.motAffiche += this.mot[this.indexLettre];
+        this.indexLettre++;
+      }
+    }, 200);
+  },
       methods:{
         getAds() {
                 axios.get('https://immobilierbenin.com/api/threeAds').then(

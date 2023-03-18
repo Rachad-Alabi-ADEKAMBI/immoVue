@@ -1,79 +1,79 @@
 <template class="main">
 
 <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><img src="http://immobilierbenin.com/public/img/logo-transparent.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-              <router-link to="/" class="nav-link" >
-              Accueil <span class="sr-only">(current)</span>
-              </router-link>
-
-            </li>
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="/ads" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Annonces
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/appartments">Appartements</a>
-                    <a class="dropdown-item" href="/houses">Maisons</a>
-                    <a class="dropdown-item" href="/lands">Terrains</a>
-
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/ads">Tout voir</a>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/sellers">Annonceurs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">A propos</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
-            </li>
-
-            <!--
-            <li class="nav-item">
-                <a class="nav-link" href="/dashboardAdmin">Tableau adm</a>
-            </li>
-
-            <li class="nav-item">
-                <router-link to="/dashboard" class="nav-link" >
-                     Tableau de bord
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><img src="http://immobilierbenin.com/public/img/logo-transparent.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                <router-link to="/" class="nav-link" >
+                Accueil <span class="sr-only">(current)</span>
                 </router-link>
-            </li>
+
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/ads" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Annonces
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/appartments">Appartements</a>
+                        <a class="dropdown-item" href="/houses">Maisons</a>
+                        <a class="dropdown-item" href="/lands">Terrains</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/ads">Tout voir</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/sellers">Annonceurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">A propos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboardAdmin">Tableau adm</a>
+                </li>
+
+                <li class="nav-item">
+                    <router-link to="/dashboard" class="nav-link" >
+                        Tableau de bord
+                    </router-link>
+                </li>
 
 
 
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>  -->
-        </ul>
-        <div class="form-inline my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>  -->
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
 
-            <button class="btn btn-primary my-2 " type="submit">
-                <router-link to="/login" >Connexion     </router-link>
-            </button>
+                <button class="btn btn-primary my-2 " type="submit">
+                    <router-link to="/login" >Connexion     </router-link>
+                </button>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 </div>
 
   <div class="content">
     <router-view/>
   </div>
 
-  <footer class="footer bg-light mt-5">
+  <footer class="footer bg-liwght mt-5">
     <div class=" container bg-light">
         <div class="row pt-3 text-left">
             <div class="col-sm-12 col-md-4">
@@ -133,7 +133,7 @@
             </div>
 
             <div class="col-6">
-                <a href="#main">
+                <a href="#app">
                     <div class="up">
 
                         <i class="fas fa-caret-up"></i>

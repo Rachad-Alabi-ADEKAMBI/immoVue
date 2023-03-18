@@ -40,9 +40,8 @@ html, body{
     background-color: $bg;
     border: 1px solid;
     border-color: $bc;
-    max-width: 130px;
-    min-width: 110px;
     cursor: pointer;
+    width: 120px;
 
 }
 
@@ -153,7 +152,6 @@ i{
     .btn{
         margin: 5px auto;
         width: max-content;
-        min-width: 170px;
 
         i{
             color: $white;
@@ -185,6 +183,12 @@ i{
     }
 }
 
+.about-img{
+    width: 350px;
+    margin: auto;
+    height: auto;
+    border-radius: 5px;
+}
 
 .dashboard{
     height: auto;
@@ -230,10 +234,18 @@ i{
 
 .btn{
    @include btn();
+   font-weight: bold;
 }
 
 .btn-link{
-    width: 250px;
+    width: 200px;
+    text-decoration: none;
+}
+
+.btn-link:hover{
+    background-color: $green;
+    border: 1px solid $green;
+    color: $white;
 }
 
 .btn-grey{
@@ -307,6 +319,9 @@ span{
     font-style: italic;
 }
 
+
+
+
 .up{
     background-color: $blue;
     width: 30px;
@@ -335,407 +350,442 @@ span{
 .main{
     display: block;
 
-    .content{
-        display: block;
-        width: 100%;
-
-        .section{
+        .content{
+            display: block;
             width: 100%;
-            margin: 15px auto;
 
-          .container{
-            .hero{
-                height: 60vh;
-                min-height: 400px;
-                margin: 0 auto;
-                display: block;
-                background-image: url('http://immobilierbenin.com/public/img/bureau2.jpg');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
+            .section{
                 width: 100%;
-                padding-top: 90px;
+                margin: 15px auto;
 
-
-                &__content{
-                    width: 80%;
-                    margin: auto;
-                    height: 100%;
-                    padding-top: 60px;
-                    text-align: center;
-
-                    h1{
-                        font-size: 3em;
-                        font-style: italic;
-                        color: $white;
-                    }
-
-                    p{
-                        margin: 20px auto;
-                        font-style: 1.1em;
-                        font-weight: 800;
-                    }
-
-
-                }
-            }
-
-            .row{
-                .tags{
-                    background-color: $white;
-                    border: 1px $border solid;
-                    margin-bottom: 15px;
-
-
-                    &__heading{
-                        background-color: $grey-light;
-                        width: 100%;
-                        height: 50px;
-                        display: table;
-
-                        .span{
-                            margin: auto;
-                            color: $grey-dark;
-                            font-size: 1.3em;
-                            font-weight: 600;
-                            display: table-cell;
-                            vertical-align: middle;
-                            text-align: center;
-                        }
-                    }
-
-                    .iframe{
-                        width: 200px;
-                        height: 200px;
-                        text-align: center;
-                        margin: auto;
-
-                        iframe{
-                            width: 195px;
-                            height:195px;
-                            margin: auto;
-                        }
-                    }
-                }
-
-               .list{
-                    background-color: $white;
-
-                    &__heading{
-                        background-color: $grey-light;
-                        height: 50px;
-
-                        .span{
-                            margin: auto;
-                            color: $grey-dark;
-                            font-size: 1.3em;
-                            font-weight: 800;
-
-                        }
-                    }
-
-                    .box{
-                        @include flex();
-                        margin: 20px auto;
-                        border: 1px solid  $border;
-
-                        &__img{
-                            overflow: hidden;
-                            img{
-                                width: 275px;
-                                height: 180px;
-                            }
-
-                            p{
-                                margin: 15px auto;
-                                font-style: italic;
-
-                            span{
-                                color: $grey;
-                            }
-                            }
-                        }
-
-                        &__infos{
-                        @include flex(column);
-                            flex: 1;
-                            text-align: left;
-                            margin-left: 10px;
-
-                            h2{
-                                text-align: left;
-                                font-size: 1.8em;
-                                color: $blue;
-                            }
-
-                                span{
-                                    color: $grey;
-                                    font-size: 1em;
-                                font-weight: 400;
-                                font-style: italic;
-                                }
-
-                                .price{
-                                    color: $blue;
-                                    font-style: italic;
-                                    font-size: 1.2em;
-                                }
-                            .icons{
-                                width: auto;
-                                @include flex();
-                                justify-content: start;
-
-                                .icon{
-                                    margin: 10px;
-                                    background-color: $grey-light;
-                                    height: 25px;
-
-                                    i{
-                                        color: $grey-dark;
-                                    }
-
-                                }
-                            }
-
-                            .btn{
-                                //: right;
-                                margin-right: 10px;
-                            }
-                        }
-                    }
-
-                    .cards{
-                        @include flex();
-                        .card{
-                            margin: auto 5px 10px 5px;
-                        }
-                    }
-                }
-
-               .item{
-                display: block;
-
-                &__heading{
-                    height: 50px;
-                    background-color:$grey;
-                    width: 100%;
+            .container{
+                   .search{
+                    width: 70%;
+                    height: 45px;
                     @include flex();
+                    justify-content: baseline;
+                    margin: 5px auto;
 
-                    h2{
-                        color: $blue;
-                    }
+                        .search__item{
+                            flex: 1;
+                            margin: 0;
+                            label{
+                                flex: 1;
+                                height: 100%;
+
+                                select{
+                                    height: 100%;
+                                    width: 100%;
+                                }
+
+                                button{
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: $green;
+                                    color: $white;
+                                    border: none;
+                                }
+
+                                button:hover{
+                                    background-color: $green-dark;
+                                }
+                            }
+                        }
+
+                   }
+
+                .hero{
+                    height: 60vh;
+                    min-height: 400px;
+                    margin: 0 auto;
+                    display: block;
+                    background-image:  linear-gradient(to bottom, rgba(55, 160, 226, 0.52), rgba(121, 165, 144, 0.73)),
+                    url('http://immobilierbenin.com/public/img/bureau2.jpg');
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    padding-top: 50px;
 
 
-
-                    .price{
-                        float: right;
-                        color: $blue;
-                        margin: auto 10px auto auto;
+                    &__content{
+                        width: 80%;
+                        margin: auto;
+                        height: 100%;
+                        padding-top: 50px;
                         text-align: center;
-                        font-weight: bold;
-                        font-size: 1.8em;
+
+                        h1{
+                            font-size: 3em;
+                            color: $white;
+                            font-family: 'Source Sans Pro', sans-serif;
+                        }
+
+                        p{
+                            margin: 20px auto;
+                            font-size: 1.2em;
+                            font-weight: 900;
+                        }
+
                     }
                 }
 
-                &__body{
-                    display: block;
+                .row{
+                    .tags{
+                        background-color: $white;
+                        border: 1px $border solid;
+                        margin-bottom: 15px;
 
-                    &__img{
-                        width: 100%;
-                        height: 350px;
-                        overflow: hidden;
-                        padding: 5px;
 
-                        img{
+                        &__heading{
+                            background-color: $grey-light;
                             width: 100%;
-                            margin: auto;
+                            height: 50px;
+                            display: table;
+
+                            .span{
+                                margin: auto;
+                                color: $grey-dark;
+                                font-size: 1.3em;
+                                font-weight: 600;
+                                display: table-cell;
+                                vertical-align: middle;
+                                text-align: center;
+                            }
                         }
 
-                        .images{
-                            @include flex();
-                            margin: 10px auto;
-                            img{
-                                width: 80px;
-                                height: 50px;
+                        .iframe{
+                            width: 200px;
+                            height: 200px;
+                            text-align: center;
+                            margin: auto;
+
+                            iframe{
+                                width: 195px;
+                                height:195px;
                                 margin: auto;
                             }
                         }
                     }
 
-                    &__images{
-                        @include flex();
-                        justify-content: space-evenly;
+                .list{
+                        background-color: $white;
 
+                        &__heading{
+                            background-color: $grey-light;
+                            height: 50px;
 
-                    img{
-                        width: 100%;
-                        padding: 5px;
-                        cursor: pointer;
-                        height: 130px;
-                        margin: 10px auto;
-                    }
+                            .span{
+                                margin: auto;
+                                color: $grey-dark;
+                                font-size: 1.3em;
+                                font-weight: 800;
 
-                    img:hover{
-
-                    }
-                }
-
-                    &__text{
-                        text-align: left;
-                        margin: 10px auto;
-
-                    }
-
-                    &__more-infos{
-                        h3{
-
-                        }
-
-                        .infos{
-                                @include flex();
-                                justify-content: start;
-
-                               .info{
-                                margin: 5px;
-
-                                i{
-                                    color: $blue;
-                                }
-
-                                .bi{
-                                    margin-top: 10px;
-                                    font-weight: bold;
-                                }
-                               }
                             }
                         }
 
+                        .box{
+                            @include flex();
+                            margin: 20px auto;
+                            border: none;
 
-                    .share-btns{
-                        width: 220px;
-                        float: left;
-                               @include flex();
-
-                                .share-btn{
-                                  @include share-btn();
+                            &__img{
+                                overflow: hidden;
+                                img{
+                                    width: 275px;
+                                    height: 180px;
                                 }
 
-                                .save{
-                                    background-color: goldenrod;
+                                p{
+                                    margin: 15px auto;
+                                    font-style: italic;
 
-                                    .fas{
-                                        display: none;
+                                span{
+                                    color: $grey;
+                                }
+                                }
+                            }
+
+                            &__infos{
+                            @include flex(column);
+                                flex: 1;
+                                text-align: left;
+                                margin-left: 10px;
+
+                                h2{
+                                    text-align: left;
+                                    font-size: 1.8em;
+                                    color: $blue;
+                                }
+
+                                    span{
+                                        color: $grey;
+                                        font-size: 1em;
+                                    font-weight: 400;
+                                    font-style: italic;
                                     }
+
+                                    .price{
+                                        color: $blue;
+                                        font-style: italic;
+                                        font-size: 1.2em;
+                                    }
+                                .icons{
+                                    width: auto;
+                                    @include flex();
+                                    justify-content: start;
+
+                                    .icon{
+                                        margin: 10px;
+                                        background-color: $grey-light;
+                                        height: 25px;
+
+                                        i{
+                                            color: $grey-dark;
+                                        }
+
+                                    }
+                                }
+
+                                .btn{
+                                    //: right;
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+
+                        .cards{
+                            @include flex();
+                            .card{
+                                margin: auto 5px 10px 5px;
+                            }
+                        }
+                    }
+
+                .item{
+                    display: block;
+
+                    &__heading{
+                        height: 50px;
+                        background-color:$grey;
+                        width: 100%;
+                        @include flex();
+
+                        h2{
+                            color: $blue;
+                        }
+
+
+
+                        .price{
+                            float: right;
+                            color: $blue;
+                            margin: auto 10px auto auto;
+                            text-align: center;
+                            font-weight: bold;
+                            font-size: 1.8em;
+                        }
+                    }
+
+                    &__body{
+                        display: block;
+
+                        &__img{
+                            width: 100%;
+                            height: 350px;
+                            overflow: hidden;
+                            padding: 5px;
+
+                            img{
+                                width: 100%;
+                                margin: auto;
+                            }
+
+                            .images{
+                                @include flex();
+                                margin: 10px auto;
+                                img{
+                                    width: 80px;
+                                    height: 50px;
+                                    margin: auto;
+                                }
+                            }
+                        }
+
+                        &__images{
+                            @include flex();
+                            justify-content: space-evenly;
+
+
+                        img{
+                            width: 100%;
+                            padding: 5px;
+                            cursor: pointer;
+                            height: 130px;
+                            margin: 10px auto;
+                        }
+
+                        img:hover{
+
+                        }
+                    }
+
+                        &__text{
+                            text-align: left;
+                            margin: 10px auto;
+
+                        }
+
+                        &__more-infos{
+                            h3{
+
+                            }
+
+                            .infos{
+                                    @include flex();
+                                    justify-content: start;
+
+                                .info{
+                                    margin: 5px;
+
+                                    i{
+                                        color: $blue;
+                                    }
+
+                                    .bi{
+                                        margin-top: 10px;
+                                        font-weight: bold;
+                                    }
+                                }
+                                }
+                            }
+
+
+                        .share-btns{
+                            width: 220px;
+                            float: left;
+                                @include flex();
+
+                                    .share-btn{
+                                    @include share-btn();
+                                    }
+
+                                    .save{
+                                        background-color: goldenrod;
+
+                                        .fas{
+                                            display: none;
+                                        }
+                                    }
+
+                                    .whatsapp{
+                                        background-color: $green;
+                                    }
+
+                                    .facebook{
+                                        background-color: $blue-clear;
+                                    }
+
+                                    .mail{
+                                        background-color: $blue;
+                                    }
+
+                                    .save:hover,
+                                    .facebook:hover,
+                                    .whatsapp:hover,
+                                    .mail:hover{
+                                        filter: brightness(120%);
+                                    }
+
+                                }
+                                }
+                }
+                }
+
+
+                .agent{
+                    margin: auto;
+
+                    &__infos{
+                        @include flex();
+                        justify-content: start;
+                        margin: auto 15px;
+
+                        img{
+                            width: 130px;
+                            height: 90px;
+                        }
+
+                        &__list{
+                            margin-left: 10px;
+                            display: block;
+
+                            .agent-contact{
+                                @include flex();
+
+                                .btn{
+                                    height: 45px;
+                                }
+
+                                .share-btn{
+                                    @include share-btn();
+
+                                    a{
+                                        margin: auto;
+                                        width: 100%;
+                                        height: 100%;
+                                        display: table;
+
+                                        i{
+                                            display: table-cell;
+                                            vertical-align: middle;
+
+                                        }
+                                    }
+
                                 }
 
                                 .whatsapp{
                                     background-color: $green;
                                 }
 
-                                .facebook{
-                                    background-color: $blue-clear;
+                                .phone{
+                                    background-color: $red;
                                 }
 
                                 .mail{
                                     background-color: $blue;
                                 }
 
-                                .save:hover,
-                                .facebook:hover,
-                                .whatsapp:hover,
-                                .mail:hover{
-                                    filter: brightness(120%);
-                                }
-
-                               }
                             }
+
                         }
                     }
 
 
-               .agent{
-                margin: auto;
+                }
 
-                &__infos{
-                    @include flex();
-                    justify-content: start;
-                    margin: auto 15px;
+                .contact{
 
-                    img{
-                        width: 130px;
-                        height: 90px;
-                    }
+                    &__item{
+                        .contact-box{
 
-                    &__list{
-                        margin-left: 10px;
-                        display: block;
-
-                        .agent-contact{
-                            @include flex();
-
-                            .btn{
-                                height: 45px;
+                            ul{
+                                padding-top: 50px;
+                                margin-top: 80px;
                             }
-
-                            .share-btn{
-                                @include share-btn();
-
-                                a{
-                                    margin: auto;
-                                    width: 100%;
-                                    height: 100%;
-                                    display: table;
-
-                                    i{
-                                        display: table-cell;
-                                        vertical-align: middle;
-
-                                    }
-                                }
-
+                            img{
+                                width: 120px;
+                                height: 80px;
                             }
-
-                            .whatsapp{
-                                background-color: $green;
-                            }
-
-                            .phone{
-                                background-color: $red;
-                            }
-
-                            .mail{
-                                background-color: $blue;
-                            }
-
                         }
-
                     }
                 }
 
-
-               }
-
-            .contact{
-
-                &__item{
-                    .contact-box{
-
-                        ul{
-                            padding-top: 50px;
-                            margin-top: 80px;
-                        }
-                        img{
-                            width: 120px;
-                            height: 80px;
-                        }
-                    }
-                }
             }
-
         }
     }
-        }
-    }
+}
 
 
 .footer{

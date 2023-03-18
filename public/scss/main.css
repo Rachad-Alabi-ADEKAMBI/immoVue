@@ -112,7 +112,6 @@ i {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  min-width: 170px;
 }
 .menu .btn i {
   color: white;
@@ -130,6 +129,13 @@ i {
 }
 .about__text .buttons .btn {
   margin: 5px;
+}
+
+.about-img {
+  width: 350px;
+  margin: auto;
+  height: auto;
+  border-radius: 5px;
 }
 
 .dashboard {
@@ -175,13 +181,20 @@ i {
   background-color: #6a70a1;
   border: 1px solid;
   border-color: #6a70a1;
-  max-width: 130px;
-  min-width: 110px;
   cursor: pointer;
+  width: 120px;
+  font-weight: bold;
 }
 
 .btn-link {
-  width: 250px;
+  width: 200px;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  background-color: #7dbf4a;
+  border: 1px solid #7dbf4a;
+  color: white;
 }
 
 .btn-grey {
@@ -189,9 +202,8 @@ i {
   background-color: #6a70a1;
   border: 1px solid;
   border-color: #6a70a1;
-  max-width: 130px;
-  min-width: 110px;
   cursor: pointer;
+  width: 120px;
 }
 
 .btn-white {
@@ -199,9 +211,8 @@ i {
   background-color: #6a70a1;
   border: 1px solid;
   border-color: #6a70a1;
-  max-width: 130px;
-  min-width: 110px;
   cursor: pointer;
+  width: 120px;
 }
 
 .btn-grey:hover {
@@ -220,9 +231,8 @@ i {
   background-color: #6a70a1;
   border: 1px solid;
   border-color: #6a70a1;
-  max-width: 130px;
-  min-width: 110px;
   cursor: pointer;
+  width: 120px;
 }
 .btn-primary a {
   color: white;
@@ -297,34 +307,67 @@ span {
   width: 100%;
   margin: 15px auto;
 }
+.main .content .section .container .search {
+  width: 70%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  line-height: 1em;
+  justify-content: baseline;
+  margin: 5px auto;
+}
+.main .content .section .container .search .search__item {
+  flex: 1;
+  margin: 0;
+}
+.main .content .section .container .search .search__item label {
+  flex: 1;
+  height: 100%;
+}
+.main .content .section .container .search .search__item label select {
+  height: 100%;
+  width: 100%;
+}
+.main .content .section .container .search .search__item label button {
+  width: 100%;
+  height: 100%;
+  background-color: #7dbf4a;
+  color: white;
+  border: none;
+}
+.main .content .section .container .search .search__item label button:hover {
+  background-color: #253303;
+}
 .main .content .section .container .hero {
   height: 60vh;
   min-height: 400px;
   margin: 0 auto;
   display: block;
-  background-image: url("http://immobilierbenin.com/public/img/bureau2.jpg");
+  background-image: linear-gradient(to bottom, rgba(55, 160, 226, 0.52), rgba(121, 165, 144, 0.73)), url("http://immobilierbenin.com/public/img/bureau2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 90px;
+  padding-top: 50px;
 }
 .main .content .section .container .hero__content {
   width: 80%;
   margin: auto;
   height: 100%;
-  padding-top: 60px;
+  padding-top: 50px;
   text-align: center;
 }
 .main .content .section .container .hero__content h1 {
   font-size: 3em;
-  font-style: italic;
   color: white;
+  font-family: "Source Sans Pro", sans-serif;
 }
 .main .content .section .container .hero__content p {
   margin: 20px auto;
-  font-style: 1.1em;
-  font-weight: 800;
+  font-size: 1.2em;
+  font-weight: 900;
 }
 .main .content .section .container .row .tags {
   background-color: white;
@@ -377,7 +420,7 @@ span {
   flex-wrap: wrap;
   line-height: 1em;
   margin: 20px auto;
-  border: 1px solid rgb(235, 223, 223);
+  border: none;
 }
 .main .content .section .container .row .list .box__img {
   overflow: hidden;
