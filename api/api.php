@@ -90,7 +90,7 @@ function register()
             empty($_POST['email']) ||
             !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
         ) {
-            $errors['email'] = 'Please check the email';
+            $errors['email'] = `Veuillez vérifier l'email`;
         } else {
             $req = $pdo->prepare('SELECT id FROM users WHERE email = ?');
             $req->execute([$_POST['email']]);
@@ -1073,8 +1073,7 @@ function login()
             !empty($_POST['username'] && !empty($_POST['pass']))
         ) {
             $sql = 'SELECT * FROM `users` WHERE `username` = ?
-            OR `email` = ?
-';
+            OR `email` = ?';
 
             $query = $pdo->prepare($sql);
 
@@ -1120,7 +1119,7 @@ function login()
 
             header('Content-Type: application/json');
             header('Access-Control-Allow-Origin: *');
-            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            return json_encode($response, JSON_UNESCAPED_UNICODE);
             //  echo json_encode($response);
             exit();
         }

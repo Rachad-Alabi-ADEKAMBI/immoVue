@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-4 mx-auto mt-30 pt-10 bg-light mt-5 mb-5">
                 <div class="login">
-                    <form  @submit.prevent="submitForm"
+                    <form  @submit.prevent="login"
                     >
                         <h1 class="text-center">
                             Connexion
@@ -13,14 +13,14 @@
                         <div class="form-group row">
                             <div class="col-sm-10 mx-auto"><br>
                                 <input type="text" class="form-control" id="" name='username'
-                                    placeholder="Email/Nom d'utilisateur" v-model="formData.username">
+                                    placeholder="Email/Nom d'utilisateur" v-model="username">
                             </div>
                         </div>
                         <br>
                         <div class="form-group row">
                             <div class="col-sm-10 mx-auto">
                                 <input type="password" class="form-control" id="" name='pass' placeholder="Mot de passe"
-                                v-model="formData.password">
+                                v-model="password">
                             </div>
                         </div>
                         <br>
@@ -62,45 +62,43 @@
 
 <script>
 import axios from "axios";
+export default {
+  data() {
+    return {
+      username: "codeur",
+      password: "idem",
+    };
+  },
 
-    export default {
-        name: 'Login',
+  methods: {
+    login() {
+      const data = {
+        username: this.username,
+        pass: this.password,
+      };
 
-      data(){
-        return{
-            formData: {
-        username: 'codeur',
-        password: 'idem'
-      }
-        }
-      },
-      mounted: function(){
-        //  this.getAds();
-      },
-      methods:{
-        submitForm() {
-    axios.post('http://127.0.0.1/immo/api/api.php?action=login', {
-      username: this.username,
-      password: this.password
-    })
-    .then(response => {
-      if (response.data.success) {
-        // Connexion réussie, rediriger l'utilisateur en fonction de son rôle
-        if (response.data.role === 'admin') {
-          this.$router.push('/admin');
-        } else {
-          this.$router.push('/dashboard');
-        }
-      } else {
-        // Afficher un message d'erreur si la connexion a échoué
-       alert('erreur')
-      }
-    })
-    .catch(error => {
-      console.log(error);
-    });
-  }
-}
-
-    }
-    </script>
+      axios
+        .post("http://127.0.0.1/immo/api/api.php?action=login", data)
+        .then(response => {
+          if (response.data.success) {
+            // Login successful
+            // Redirect to the appropriate page based on the user role
+          /*  if (response.data.role === "admin") {
+              this.$router.push("/dashboard");
+            } else {
+              this.$router.push("/dashboard");
+            }
+            */
+           alert('1');
+          } else {
+            // Login failed
+            alert(response.data.message);
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    },
+  },
+};
+</script>

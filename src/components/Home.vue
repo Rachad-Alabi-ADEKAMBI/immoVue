@@ -7,7 +7,7 @@
             <div class="hero">
                                 <div class="hero__content">
                                     <h1 class="animation">
-                                    {{ motAffiche }}
+                                    {{ mot }}
                                     </h1>
                                     <p class="text text-white">
                                         Annonces de vente & location de biens immobiliers
